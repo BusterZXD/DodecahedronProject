@@ -91,7 +91,7 @@ def snake():
 	num=random.randint(0,LED_BRIGHTNESS)
 	for i in range(LED_COUNT):
 		pixels[i] = (num, num, num)
-		if (i +4)<(LED_COUNT)
+		if (i +4)<(LED_COUNT):
 			pixels[i +1] = (num, num, num)
 			pixels[i +2] = (num, num, num)
 			pixels[i +3] = (num, num, num)
