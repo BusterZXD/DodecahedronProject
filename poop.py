@@ -119,6 +119,7 @@ def flickRand():
 	
 
 #Main run area to call functions
+all_Off()
 running = True;
 while running:
 	red_CountUp()
