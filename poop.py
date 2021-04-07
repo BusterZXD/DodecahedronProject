@@ -121,7 +121,15 @@ def flickRand():
 #Main run area to call functions
 running = True;
 while running:
-	flick()
-
-
-	
+	red_CountUp()
+	time.sleep(2)
+	green_CountUp()
+	time.sleep(2)
+	blue_CountUp()
+	time.sleep(2)
+	white_CountUp()
+	time.sleep(2)
+	even_CountUp()
+	time.sleep(2)
+	odd_CountUp()
+	time.sleep(2)
