@@ -25,7 +25,7 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 # ALL LED OFF
 def all_Off():
 	for i in range(LED_COUNT):
-	pixels[i] = (0, 0, 0)
+		pixels[i] = (0, 0, 0)
 	
 # RED
 def red_CountUp():
