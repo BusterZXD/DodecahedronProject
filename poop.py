@@ -103,7 +103,7 @@ def flick():
 	for i in range(LED_COUNT):
 		for i in range(LED_COUNT):
 			pixels[i] = (196, 35, 210)
-			if i=LED_COUNT - 1:
+			if i==LED_COUNT - 1:
 				time.sleep(2)
 	all_Off()
 		
@@ -113,7 +113,7 @@ def flickRand():
 		for i in range(LED_COUNT):
 			num=random.randint(0,LED_BRIGHTNESS)
 			pixels[i] = (num, num, num)
-			if i=LED_COUNT - 1:
+			if i==LED_COUNT - 1:
 				time.sleep(2)
 	all_Off()
 	
