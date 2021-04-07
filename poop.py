@@ -57,7 +57,7 @@ def white_CountUp():
 #EVEN
 def even_CountUp():
 	for i in range(LED_COUNT):
-		if LED_COUNT % 2=0:
+		if LED_COUNT % 2==0:
 			pixels[i] = (0, 0, 255)
 			time.sleep(1)
 			pixels[i] = (0, 255, 0)
@@ -69,7 +69,7 @@ def even_CountUp():
 #ODD
 def odd_CountUp():
 	for i in range(LED_COUNT):
-		if LED_COUNT % 2=1:
+		if LED_COUNT % 2==1:
 			pixels[i] = (0, 0, 255)
 			time.sleep(1)
 			pixels[i] = (0, 255, 0)
