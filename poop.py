@@ -122,11 +122,7 @@ def flickRand():
 all_Off()
 running = True;
 while running:
-	snake()
-	time.sleep(0.1)
-	flick()
-	time.sleep(0.1)
 	flickRand()
-	time.sleep(0.1)
+	time.sleep(1)
 	all_Random()
-	time.sleep(0.1)
+	time.sleep(1)
