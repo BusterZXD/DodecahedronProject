@@ -81,21 +81,21 @@ def odd_CountUp():
 #ALL RANDOM
 def all_Random():
 	num=random.randint(0,LED_BRIGHTNESS)
-		for i in range(LED_COUNT):
-			pixels[i] = (num, num, num)
-			time.sleep(1)
+	for i in range(LED_COUNT):
+		pixels[i] = (num, num, num)
+		time.sleep(1)
 	all_Off()
 
 #Snake Random color
 def snake():
 	num=random.randint(0,LED_BRIGHTNESS)
-		for i in range(LED_COUNT):
-			pixels[i] = (num, num, num)
-				if (i +4)<LED_COUNT
-					pixels[i +1] = (num, num, num)
-					pixels[i +2] = (num, num, num)
-					pixels[i +3] = (num, num, num)
-					pixels[i +4] = (num, num, num)
+	for i in range(LED_COUNT):
+		pixels[i] = (num, num, num)
+			if (i +4)<LED_COUNT
+				pixels[i +1] = (num, num, num)
+				pixels[i +2] = (num, num, num)
+				pixels[i +3] = (num, num, num)
+				pixels[i +4] = (num, num, num)
 	all_Off()
 
 #Flicker (corey color)
@@ -103,8 +103,8 @@ def flick():
 	for i in range(LED_COUNT):
 		for i in range(LED_COUNT):
 			pixels[i] = (196, 35, 210):
-				if i=LED_COUNT - 1:
-					time.sleep(2)
+			if i=LED_COUNT - 1:
+				time.sleep(2)
 	all_Off()
 		
 #Flicker (random)
@@ -113,8 +113,8 @@ def flickRand():
 		for i in range(LED_COUNT):
 			num=random.randint(0,LED_BRIGHTNESS)
 			pixels[i] = (num, num, num):
-				if i=LED_COUNT - 1:
-					time.sleep(2)
+			if i=LED_COUNT - 1:
+				time.sleep(2)
 	all_Off()
 	
 
