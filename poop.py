@@ -1,11 +1,10 @@
+import board
 import neopixel
 import time
 import argparse
 import random
 
 from rpi_ws281x import *
-
-pixels = neopixel.NeoPixel(board.D18, 30)
 
 # 7 per side (35 per panel)(12 panels)
 #Destiny color corey(196,35,210)
@@ -20,6 +19,8 @@ LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 
+pixels = neopixel.NeoPixel(board.D18, LED_COUNT)
+
 #Standard Colors
 # ALL LED OFF
 def all_Off():
@@ -30,14 +31,14 @@ def all_Off():
 def red_CountUp():
 	for i in range(LED_COUNT):
 		pixels[i] = (255, 0, 0)
-		time.sleep(1)
+		time.sleep(0.1)
 	all_Off()
 
 # GREEN
 def green_CountUp():
 	for i in range(LED_COUNT):
 		pixels[i] = (0, 255, 0)
-		time.sleep(1)
+		time.sleep(0.1)
 	all_Off()
 	
 # BLUE
