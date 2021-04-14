@@ -10,16 +10,16 @@ from rpi_ws281x import *
 #Destiny color corey(196,35,210)
 
 # LED strip configuration:
-LED_COUNT      = 59      # Number of LED pixels
-LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
-#LED_PIN       = 10    	 # GPIO pin connecwted to the pixels (10 uses SPI /dev/spidev0.0).
-LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
-LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
-LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
-LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
-LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
-Color          = 255
-Faces          = 6
+LED_COUNT	   = 59		 # Number of LED pixels
+LED_PIN		   = 18		 # GPIO pin connected to the pixels (18 uses PWM!).
+#LED_PIN	   = 10		 # GPIO pin connecwted to the pixels (10 uses SPI /dev/spidev0.0).
+LED_FREQ_HZ	   = 800000	 # LED signal frequency in hertz (usually 800khz)
+LED_DMA		   = 10		 # DMA channel to use for generating signal (try 10)
+LED_BRIGHTNESS = 255	 # Set to 0 for darkest and 255 for brightest
+LED_INVERT	   = False	 # True to invert the signal (when using NPN transistor level shift)
+LED_CHANNEL	   = 0		 # set to '1' for GPIOs 13, 19, 41, 45 or 53
+Color		   = 255
+Faces		   = 6
 
 pixels = neopixel.NeoPixel(board.D18, LED_COUNT)
 
@@ -86,22 +86,22 @@ def all_Random():
 	num2=0
 	num3=0
 	for i in range(LED_COUNT):
-		    num1=random.randint(0,Color)
-	        num2=random.randint(0,Color)
-	        num3=random.randint(0,Color)
-			pixels[i] = (num1, num2, num3)
-			time.sleep(1)
+		num1=random.randint(0,Color)
+		num2=random.randint(0,Color)
+		num3=random.randint(0,Color)
+		pixels[i] = (num1, num2, num3)
+		time.sleep(1)
 	all_Off()
 
 #Snake (pink)
 def snake():
-		for i in range(LED_COUNT):
-			pixels[i] = (255, 0, 240)
-				if i<4
-					pixels[i -1] = (0, 0, 0)
-					pixels[i -2] = (0, 0, 0)
-					pixels[i -3] = (0, 0, 0)
-					pixels[i -4] = (0, 0, 0)
+	for i in range(LED_COUNT):
+		pixels[i] = (255, 0, 240)
+			if i<4
+				pixels[i -4] = (0, 0, 0)
+				pixels[i -3] = (0, 0, 0)
+				pixels[i -2] = (0, 0, 0)
+				pixels[i -1] = (0, 0, 0)
 	all_Off()
 
 #Flicker (corey color)
@@ -156,7 +156,7 @@ def color_chase(wait):
 		pixels.show()
 	time.sleep(0.5)
 	all_Off()
-   
+
 def cycleRainbow(wait)
 for j in range(255):
 	for i in range(LED_COUNT):
