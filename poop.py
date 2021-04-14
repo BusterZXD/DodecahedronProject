@@ -18,6 +18,8 @@ LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
+Color          = 255
+Faces          = 6
 
 pixels = neopixel.NeoPixel(board.D18, LED_COUNT)
 
@@ -80,22 +82,26 @@ def odd_CountUp():
 
 #ALL RANDOM
 def all_Random():
-	num=random.randint(0,LED_BRIGHTNESS)
+    num1=0
+    num2=0
+    num3=0
 	for i in range(LED_COUNT):
-		pixels[i] = (num, num, num)
-		time.sleep(0.1)
+		    num1=random.randint(0,Color)
+	        num2=random.randint(0,Color)
+	        num3=random.randint(0,Color)
+			pixels[i] = (num1, num2, num3)
+			time.sleep(1)
 	all_Off()
 
-#Snake Random color
+#Snake (pink)
 def snake():
-	num=random.randint(0,LED_BRIGHTNESS)
-	for i in range(LED_COUNT):
-		pixels[i] = (num, num, num)
-		if (i +4)<(LED_COUNT):
-			pixels[i +1] = (num, num, num)
-			pixels[i +2] = (num, num, num)
-			pixels[i +3] = (num, num, num)
-			pixels[i +4] = (num, num, num)
+		for i in range(LED_COUNT):
+			pixels[i] = (255, 0, 240)
+				if i<4
+					pixels[i -1] = (0, 0, 0)
+					pixels[i -2] = (0, 0, 0)
+					pixels[i -3] = (0, 0, 0)
+					pixels[i -4] = (0, 0, 0)
 	all_Off()
 
 #Flicker (corey color)
@@ -109,20 +115,62 @@ def flick():
 		
 #Flicker (random)
 def flickRand():
+    num1=0
+    num2=0
+    num3=0
 	for i in range(LED_COUNT):
 		for i in range(LED_COUNT):
-			num=random.randint(0,LED_BRIGHTNESS)
-			pixels[i] = (num, num, num)
-			if i==LED_COUNT - 1:
-				time.sleep(0.1)
+			num1=random.randint(0,Color)
+			num2=random.randint(0,Color)
+			num3=random.randint(0,Color)
+			pixels[i] = (num1, num2, num3):
+				if i=LED_COUNT - 1:
+					time.sleep(2)
 	all_Off()
-	
+
+#Faces(cube)
+def cubeFaces():
+    LED_COUNT = 60
+    for i in range(LED_COUNT):
+        
 
 #Main run area to call functions
 all_Off()
 running = True;
 while running:
-	flickRand()
-	time.sleep(1)
-	all_Random()
-	time.sleep(1)
+	flick()
+
+   for j in range(255):
+       for i in range(LED_COUNT):
+           pixel_index = (i * 256 // num_pixels) + j
+           pixels[i] = wheel(pixel_index & 255)
+       pixels.show()
+       time.sleep(wait)
+
+def wheel(pos):
+   # Input a value 0 to 255 to get a color value.
+   # The colours are a transition r - g - b - back to r.
+   if pos < 0 or pos > 255:
+       r = g = b = 0
+   elif pos < 85:
+       r = int(pos * 3)
+       g = int(255 - pos * 3)
+       b = 0
+   elif pos < 170:
+       pos -= 85
+       r = int(255 - pos * 3)
+       g = 0
+       b = int(pos * 3)
+   else:
+       pos -= 170
+       r = 0
+       g = int(pos * 3)
+       b = int(255 - pos * 3)
+   return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
+
+def color_chase(wait):
+   for i in range(LED_COUNT):
+       pixels[i] = (255, 255, 0)
+       time.sleep(wait)
+       pixels.show()
+   time.sleep(0.5)
