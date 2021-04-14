@@ -171,5 +171,8 @@ all_Off()
 running = True;
 while running:
 	flick()
+	color_chase(0.1)
+	cycleRainbow(0.1)
+	flickRand()
+	all_Random()
 
-   
