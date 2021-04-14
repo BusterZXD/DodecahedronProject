@@ -82,9 +82,9 @@ def odd_CountUp():
 
 #ALL RANDOM
 def all_Random():
-    num1=0
-    num2=0
-    num3=0
+	num1=0
+	num2=0
+	num3=0
 	for i in range(LED_COUNT):
 		    num1=random.randint(0,Color)
 	        num2=random.randint(0,Color)
@@ -115,9 +115,9 @@ def flick():
 		
 #Flicker (random)
 def flickRand():
-    num1=0
-    num2=0
-    num3=0
+	num1=0
+	num2=0
+	num3=0
 	for i in range(LED_COUNT):
 		for i in range(LED_COUNT):
 			num1=random.randint(0,Color)
@@ -128,11 +128,43 @@ def flickRand():
 					time.sleep(2)
 	all_Off()
 
-#Faces(cube)
-def cubeFaces():
-    LED_COUNT = 60
-    for i in range(LED_COUNT):
-        
+def wheel(pos):
+   # Input a value 0 to 255 to get a color value.
+   # The colours are a transition r - g - b - back to r.
+	if pos < 0 or pos > 255:
+		r = g = b = 0
+	elif pos < 85:
+		r = int(pos * 3)
+		g = int(255 - pos * 3)
+		b = 0
+	elif pos < 170:
+		pos -= 85
+		r = int(255 - pos * 3)
+		g = 0
+		b = int(pos * 3)
+	else:
+		pos -= 170
+		r = 0
+		g = int(pos * 3)
+		b = int(255 - pos * 3)
+	return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
+
+def color_chase(wait):
+	for i in range(LED_COUNT):
+		pixels[i] = (255, 255, 0)
+		time.sleep(wait)
+		pixels.show()
+	time.sleep(0.5)
+	all_Off()
+   
+def cycleRainbow(wait)
+for j in range(255):
+	for i in range(LED_COUNT):
+		pixel_index = (i * 256 // num_pixels) + j
+		pixels[i] = wheel(pixel_index & 255)
+		pixels.show()
+		time.sleep(wait)
+	all_Off()
 
 #Main run area to call functions
 all_Off()
@@ -140,37 +172,4 @@ running = True;
 while running:
 	flick()
 
-   for j in range(255):
-       for i in range(LED_COUNT):
-           pixel_index = (i * 256 // num_pixels) + j
-           pixels[i] = wheel(pixel_index & 255)
-       pixels.show()
-       time.sleep(wait)
-
-def wheel(pos):
-   # Input a value 0 to 255 to get a color value.
-   # The colours are a transition r - g - b - back to r.
-   if pos < 0 or pos > 255:
-       r = g = b = 0
-   elif pos < 85:
-       r = int(pos * 3)
-       g = int(255 - pos * 3)
-       b = 0
-   elif pos < 170:
-       pos -= 85
-       r = int(255 - pos * 3)
-       g = 0
-       b = int(pos * 3)
-   else:
-       pos -= 170
-       r = 0
-       g = int(pos * 3)
-       b = int(255 - pos * 3)
-   return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
-
-def color_chase(wait):
-   for i in range(LED_COUNT):
-       pixels[i] = (255, 255, 0)
-       time.sleep(wait)
-       pixels.show()
-   time.sleep(0.5)
+   
