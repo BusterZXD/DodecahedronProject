@@ -97,7 +97,7 @@ def all_Random():
 def snake():
 	for i in range(LED_COUNT):
 		pixels[i] = (255, 0, 240)
-		if (i<4)
+		if i<4
 			pixels[i -4] = (0, 0, 0)
 			pixels[i -3] = (0, 0, 0)
 			pixels[i -2] = (0, 0, 0)
