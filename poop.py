@@ -124,7 +124,7 @@ def flickRand():
 			num2=random.randint(0,Color)
 			num3=random.randint(0,Color)
 			pixels[i] = (num1, num2, num3)
-				if i=LED_COUNT - 1:
+				if i==LED_COUNT - 1:
 					time.sleep(2)
 	all_Off()
 
