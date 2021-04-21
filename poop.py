@@ -220,7 +220,7 @@ def solidColor(red,green,blue,delay):
 	all_Off()
 
 def rainbow():
-	delay=0.1
+	delay=0.001
 	faceA(247,16,55,delay)
 	faceB(247,16,194,delay)
 	faceC(155,16,247,delay)
@@ -253,7 +253,7 @@ def blinkRanbow():
 
 def flashBang():
 	for i in range(10):
-		delay=0.08
+		delay=0.0008
 		faceA(255,255,255,delay)
 		faceB(255,255,255,delay)
 		faceC(255,255,255,delay)
