@@ -36,7 +36,7 @@ ValK           =209 #strip 30 (k)
 ############################FUNCTIONS FOR FACES##########################################
 ####################Subfunctions for each bottom face####################################
 def faceA(red,green,blue,delay):
-	for i in range(ValA):
+	for i in range(ValA+1):
 		pixels[i] = (red,green,blue)
 		time.sleep(delay)
 
