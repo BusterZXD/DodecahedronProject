@@ -269,6 +269,23 @@ def blinkRanbow():
 		all_Off()
 	all_Off()
 
+def flashBangRainbow():
+	for i in range(20):
+		delay=0
+		pixels.fill((247,16,55))
+		pixels.fill((247,16,194))
+		pixels.fill((155,16,247))
+		pixels.fill((70,16,247))
+		pixels.fill((16,194,247))
+		pixels.fill((16,247,232))
+		pixels.fill((16,247,155))
+		pixels.fill((16,247,24))
+		pixels.fill((186,247,16))
+		pixels.fill((247,240,16))
+		pixels.fill((247,163,16))
+		all_Off()
+	all_Off()
+
 def flashBang():
 	for i in range(20):
 		delay=0
@@ -286,7 +303,6 @@ def flashBang():
 		#faceK(255,255,255,delay)
 		all_Off()
 	all_Off()
-
 def pacman(): #fix speed and color
 	delay=0
 	faceA(238,250,177,delay)
@@ -463,7 +479,7 @@ while running:
 	#doubleRainbow()
 	print("Running: Christmas Tree")
 	christmasTree()
-	flashBang()
+	flashBangRainbow()
 	print("Running: Thunder")
 	thunder()
 	flashBang()
@@ -471,20 +487,20 @@ while running:
 	#dying()
 	print("Running: Rings Rainbow Flicker")
 	ringsRanbowFlicker()
-	flashBang()
+	flashBangRainbow()
 	print("Running: All Random")
 	allRandom()
 	flashBang()
 	print("--Excicuting Gradients--")
 	print("Running: Fire")
 	fire()
-	flashBang()
+	flashBangRainbow()
 	print("Running: Megatron")
 	megaTron()
 	flashBang()
 	print("Running: JShine")
 	jShine()
-	flashBang()
+	flashBangRainbow()
 	print("Running: Neon")
 	neon()
 	flashBang()
