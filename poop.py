@@ -74,7 +74,7 @@ while (True):
 	
 	L4.setAlive()
 
-class Edges:
+class Edges
 	def defineEdges
 		numEdges = 30
 		numLights = 7
