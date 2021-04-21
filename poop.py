@@ -202,41 +202,14 @@ def bottomRing(red,green,blue,delay):
 ###############################ALL LED OFF/RESET#########################################
 def all_Off():
 	pixels.fill((0,0,0))
-	#for i in range(LED_COUNT):
-		#print("Resetting led", i, "\n")
-		
-		#pixels[i] = (0, 0, 0)
 ###########################Main Functions################################################
 def solidColor(red,green,blue,delay):
 	pixels.fill((red,green,blue))
-	#faceA(red,green,blue,delay)
-	#faceB(red,green,blue,delay)
-	#faceC(red,green,blue,delay)
-	#faceD(red,green,blue,delay)
-	#faceE(red,green,blue,delay)
-	#faceF(red,green,blue,delay)
-	#faceG(red,green,blue,delay)
-	#faceH(red,green,blue,delay)
-	#faceI(red,green,blue,delay)
-	#faceJ(red,green,blue,delay)
-	#faceK(red,green,blue,delay)
 	all_Off()
 
 def solidColorNoOFF(red,green,blue,delay):
 	pixels.fill((red,green,blue))
-	#faceA(red,green,blue,delay)
-	#faceB(red,green,blue,delay)
-	#faceC(red,green,blue,delay)
-	#faceD(red,green,blue,delay)
-	#faceE(red,green,blue,delay)
-	#faceF(red,green,blue,delay)
-	#faceG(red,green,blue,delay)
-	#faceH(red,green,blue,delay)
-	#faceI(red,green,blue,delay)
-	#faceJ(red,green,blue,delay)
-	#faceK(red,green,blue,delay)
 
-	
 def rainbow():
 	delay=0.001
 	faceA(247,16,55,delay)
@@ -290,17 +263,6 @@ def flashBang():
 	for i in range(20):
 		delay=0
 		pixels.fill((255,255,255))
-		#faceA(255,255,255,delay)
-		#faceB(255,255,255,delay)
-		#faceC(255,255,255,delay)
-		#faceD(255,255,255,delay)
-		#faceE(255,255,255,delay)
-		#faceF(255,255,255,delay)
-		#faceG(255,255,255,delay)
-		#faceH(255,255,255,delay)
-		#faceI(255,255,255,delay)
-		#faceJ(255,255,255,delay)
-		#faceK(255,255,255,delay)
 		all_Off()
 	all_Off()
 def pacman(): #fix speed and color
@@ -316,7 +278,7 @@ def pacman(): #fix speed and color
 
 def doubleRainbow():
 	delay=0.1
-	for i in range(3):
+	for i in range(2):
 		time.sleep(0.5)
 		if i % 2==0:
 			faceA(247,16,55,delay)
@@ -384,17 +346,14 @@ def ringsRanbowFlicker():
 	middleRing(255,162,0,0)
 	bottomRing(255,247,0,0)
 	all_Off()
-	#time.sleep(0.25)
 	topRing(128,255,0,0)
 	middleRing(0,255,154,0)
 	bottomRing(0,255,239,0)
 	all_Off()
-	#time.sleep(0.25)
 	topRing(0,145,255,0)
 	middleRing(0,9,255,0)
 	bottomRing(145,0,255,0)
 	all_Off()
-	#time.sleep(0.25)
 	topRing(247,0,255,0)
 	middleRing(255,0,171,0)
 	bottomRing(255,0,77,0)
@@ -409,7 +368,6 @@ def allRandom():
 		num2=random.randint(0,255)
 		num3=random.randint(0,255)
 		pixels[i] = (num1,num2,num3)
-		#time.sleep(0)
 	all_Off()
 
 ####################################Gradients####################################################
@@ -456,16 +414,16 @@ running = True;
 while running:
 	print("RESETTING LIGHTS")
 	all_Off()
-	#print("Running: Rainbow")
-	#rainbow()
-	#print("Running: Blink Rainbow")
-	#blinkRanbow()
-	#print("Running: FlashBang")
-	#flashBang()
+	print("Running: Rainbow")
+	rainbow()
+	print("Running: Blink Rainbow")
+	blinkRanbow()
+	print("Running: FlashBang")
+	flashBang()
 	print("Running: Pacman")
 	pacman()
-	#print("Running: Double Rainbow")
-	#doubleRainbow()
+	print("Running: Double Rainbow")
+	doubleRainbow()
 	print("Running: Christmas Tree")
 	christmasTree()
 	flashBangRainbow()
