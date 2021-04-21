@@ -35,36 +35,36 @@ ValJ           =202 #strip 28-29 (j)
 ValK           =209 #strip 30 (k)
 
 
-class LightningBolt:
+#lass LightningBolt:
     """A simple example class"""
-    startingEdge = 3
-	index = 0
-	dead = 0
+ #   startingEdge = 3
+	#index = 0
+	#dead = 0
 
-    def __init__(self, edge):
-		self.startingEdge = edge
-		self.dead = 1 
-        return 'hello world'
+    #def __init__(self, edge):
+	#	self.startingEdge = edge
+#		self.dead = 1 
+ #       return 'hello world'
 		
-	def update()
-		if (self.dead == 0)
-			pixels[self.index] = (0,0,0)
-			self.index++
-			pixels[self.index] = (200,200,255)
+	#def update()
+	#	if (self.dead == 0)
+	#		pixels[self.index] = (0,0,0)
+	#		self.index++
+	#		pixels[self.index] = (200,200,255)
 		
 		#check end of lightning
-		if (self.index > 20)
-			self.dead = 1
+	#	if (self.index > 20)
+	#		self.dead = 1
 			
-	def setAlive()
-		self.index = 0
-		self.dead = 0
+	#def setAlive()
+	#	self.index = 0
+	#	self.dead = 0
 
-L1 = LightningBolt(0)
-L2 = LightningBolt(1)
-L3 = LightningBolt(2)
-L4 = LightningBolt(3)
-L5 = LightningBolt(4)
+#L1 = LightningBolt(0)
+#L2 = LightningBolt(1)
+#L3 = LightningBolt(2)
+#L4 = LightningBolt(3)
+#L5 = LightningBolt(4)
 
 while (True):
 
