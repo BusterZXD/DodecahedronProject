@@ -293,7 +293,7 @@ def doubleRainbow():
 	delay=0.1
 	for i in range(3):
 		time.sleep(0.5)
-		if i % 2=0:
+		if i % 2==0:
 			faceA(247,16,55,delay)
 			faceB(247,16,194,delay)
 			faceC(155,16,247,delay)
@@ -305,7 +305,7 @@ def doubleRainbow():
 			faceI(186,247,16,delay)
 			faceJ(247,240,16,delay)
 			faceK(247,163,16,delay)
-		elif i % 2=1:
+		elif i % 2==1:
 			faceA(247,163,16,delay)
 			faceB(247,240,16,delay)
 			faceC(186,247,16,delay)
@@ -322,9 +322,9 @@ def doubleRainbow():
 
 def christmasTree():
 	for i in range(LED_COUNT):
-		if i % 2=0:
+		if i % 2==0:
 			pixels[i]=(255,0,0)
-		elif i % 2=1:
+		elif i % 2==1:
 			pixels[i]=(0,255,0)
 	all_Off()
 
