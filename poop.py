@@ -331,26 +331,26 @@ def christmasTree():
 
 def thunder():
 	topRing(255,255,255,0)
-	time.sleep(2)
-	edge7(64,57,255,0.05)
-	edge8(64,57,255,0.05)
-	edge9(64,57,255,0.05)
-	edge10(64,57,255,0.05)
-	edge11(64,57,255,0.05)
-	edge1(64,57,255,0.05)
-	edge2(64,57,255,0.05)
-	edge3(64,57,255,0.05)
-	edge4(64,57,255,0.05)
-	edge5(64,57,255,0.05)
-	edge6(64,57,255,0.05)
+	time.sleep(1)
+	edge7(64,57,255,0)
+	edge8(64,57,255,0)
+	edge9(64,57,255,0)
+	edge10(64,57,255,0)
+	edge11(64,57,255,0)
+	edge1(64,57,255,0)
+	edge2(64,57,255,0)
+	edge3(64,57,255,0)
+	edge4(64,57,255,0)
+	edge5(64,57,255,0)
+	edge6(64,57,255,0)
 
-def dying():
+def dying(): ##issue 
 	for i in range(3):
 		solidColor(0,255,145,0.01)
-		LED_BRIGHTNESS -= 50
+		LED_BRIGHTNESS -= 50 #isssue
 	for i in range(2):
 		solidColor(255,0,9,0.01)
-		LED_BRIGHTNESS -= 50
+		LED_BRIGHTNESS -= 50 #iisue
 	LED_BRIGHTNESS = 255
 	all_Off()
 
