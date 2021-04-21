@@ -265,6 +265,7 @@ def flashBang():
 		pixels.fill((255,255,255))
 		all_Off()
 	all_Off()
+
 def pacman(): #fix speed and color
 	delay=0.001
 	pixels.fill((168,227,255))
@@ -315,7 +316,7 @@ def christmasTree():
 	all_Off()
 
 def thunder():
-	pixels.fill((255,255,255))
+	topRing(255,255,255,0)
 	time.sleep(1)
 	edge7(64,57,255,0)
 	edge8(64,57,255,0)
