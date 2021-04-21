@@ -66,15 +66,14 @@ ValK           =209 #strip 30 (k)
 #L4 = LightningBolt(3)
 #L5 = LightningBolt(4)
 
-while (True):
+#while (True):
 
-	L1.update()
-	L2.update()
-	L3.update()
+#	L1.update()
+#	L2.update()	L3.update()
 	
-	L4.setAlive()
+	#L4.setAlive()
 
-class Edges
+class Edges:
 	def defineEdges
 		numEdges = 30
 		numLights = 7
