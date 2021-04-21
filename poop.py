@@ -252,7 +252,7 @@ def blinkRanbow():
 	all_Off()
 
 def flashBang():
-	for i in range(10):
+	for i in range(3):
 		delay=0
 		faceA(255,255,255,delay)
 		faceB(255,255,255,delay)
@@ -439,8 +439,8 @@ while running:
 	flashBang()
 	print("Running: Pacman")
 	pacman()
-	print("Running: Double Rainbow")
-	doubleRainbow()
+	#print("Running: Double Rainbow")
+	#doubleRainbow()
 	print("Running: Christmas Tree")
 	christmasTree()
 	print("Running: Thunder")
