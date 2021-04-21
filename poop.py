@@ -235,8 +235,8 @@ def rainbow():
 	all_Off()
 
 def blinkRanbow():
-	for i in range(10):
-		delay=0.01
+	for i in range(3):
+		delay=0.001
 		faceA(247,163,16,delay)
 		faceB(247,240,16,delay)
 		faceC(186,247,16,delay)
