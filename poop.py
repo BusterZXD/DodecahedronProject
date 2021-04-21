@@ -268,7 +268,7 @@ def flashBang():
 		all_Off()
 	all_Off()
 
-def pacman():
+def pacman(): #fix speed and color
 	delay=0.001
 	faceA(238,250,177,delay)
 	faceB(238,250,177,delay)
@@ -431,14 +431,14 @@ running = True;
 while running:
 	print("RESETTING LIGHTS")
 	all_Off()
-	print("Running: Rainbow")
-	rainbow()
-	print("Running: Blink Rainbow")
-	blinkRanbow()
-	print("Running: FlashBang")
-	flashBang()
-	print("Running: Pacman")
-	pacman()
+	#print("Running: Rainbow")
+	#rainbow()
+	#print("Running: Blink Rainbow")
+	#blinkRanbow()
+	#print("Running: FlashBang")
+	#flashBang()
+	#print("Running: Pacman")
+	#pacman()
 	#print("Running: Double Rainbow")
 	#doubleRainbow()
 	print("Running: Christmas Tree")
