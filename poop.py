@@ -160,7 +160,7 @@ def topRing(red,green,blue,delay):
 		pixels[i] = (red,green,blue)
 	for i in range(189,195+1): #28
 		pixels[i] = (red,green,blue)
-	for i in range(203,209+1): #30
+	for i in range(203,209): #30
 		pixels[i] = (red,green,blue)
 	time.sleep(delay)
 ##########################################MIDDLE#########################################
