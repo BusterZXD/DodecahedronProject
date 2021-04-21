@@ -219,6 +219,20 @@ def solidColor(red,green,blue,delay):
 	faceK(red,green,blue,delay)
 	all_Off()
 
+def solidColorNoOFF(red,green,blue,delay):
+	faceA(red,green,blue,delay)
+	faceB(red,green,blue,delay)
+	faceC(red,green,blue,delay)
+	faceD(red,green,blue,delay)
+	faceE(red,green,blue,delay)
+	faceF(red,green,blue,delay)
+	faceG(red,green,blue,delay)
+	faceH(red,green,blue,delay)
+	faceI(red,green,blue,delay)
+	faceJ(red,green,blue,delay)
+	faceK(red,green,blue,delay)
+
+	
 def rainbow():
 	delay=0.001
 	faceA(247,16,55,delay)
@@ -269,7 +283,7 @@ def flashBang():
 	all_Off()
 
 def pacman(): #fix speed and color
-	delay=0.001
+	delay=0
 	faceA(238,250,177,delay)
 	faceB(238,250,177,delay)
 	faceC(238,250,177,delay)
@@ -391,41 +405,41 @@ def allRandom():
 ####################################Gradients####################################################
 def fire():
 	for i in range(2):
-		solidColor(236,29,56,0)
-		solidColor(255,145,18,0)
-		solidColor(243,157,58,0)
-		solidColor(239,222,112,0)
-		solidColor(243,229,100,0)
+		solidColorNoOFF(236,29,56,0)
+		solidColorNoOFF(255,145,18,0)
+		solidColorNoOFF(243,157,58,0)
+		solidColorNoOFF(239,222,112,0)
+		solidColorNoOFF(243,229,100,0)
 	all_Off()
 
 def megaTron():
 	for i in range(2):
-		solidColor(198,255,221,0)
-		solidColor(183,250,132,0)
-		solidColor(223,250,132,0)
-		solidColor(251,215,134,0)
-		solidColor(249,194,122,0)
-		solidColor(247,121,125,0)
+		solidColorNoOFF(198,255,221,0)
+		solidColorNoOFF(183,250,132,0)
+		solidColorNoOFF(223,250,132,0)
+		solidColorNoOFF(251,215,134,0)
+		solidColorNoOFF(249,194,122,0)
+		solidColorNoOFF(247,121,125,0)
 	all_Off()
 
 def jShine():
 	for i in range(2):
-		solidColor(18,194,233,0)
-		solidColor(123,98,249,0)
-		solidColor(169,98,249,0)
-		solidColor(194,98,249,0)
-		solidColor(229,98,249,0)
-		solidColor(249,98,239,0)
+		solidColorNoOFF(18,194,233,0)
+		solidColorNoOFF(123,98,249,0)
+		solidColorNoOFF(169,98,249,0)
+		solidColorNoOFF(194,98,249,0)
+		solidColorNoOFF(229,98,249,0)
+		solidColorNoOFF(249,98,239,0)
 	all_Off()
 
 def neon():
 	for i in range(2):
-		solidColor(63,8,135,0)
-		solidColor(106,54,174,0)
-		solidColor(130,80,196,0)
-		solidColor(189,68,208,0)
-		solidColor(215,62,215,0)
-		solidColor(252,29,215,0)
+		solidColorNoOFF(63,8,135,0)
+		solidColorNoOFF(106,54,174,0)
+		solidColorNoOFF(130,80,196,0)
+		solidColorNoOFF(189,68,208,0)
+		solidColorNoOFF(215,62,215,0)
+		solidColorNoOFF(252,29,215,0)
 	all_Off()
 #Main run area to call functions
 running = True;
