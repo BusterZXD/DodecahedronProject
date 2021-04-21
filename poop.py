@@ -305,7 +305,7 @@ def flashBang():
 	all_Off()
 def pacman(): #fix speed and color
 	delay=0
-	pixels.fill((238,250,177))
+	pixels.fill((249,255,151))
 	for i in range(LED_COUNT):
 		pixels[i]=(255,255,0)
 		if i >=1:
@@ -461,8 +461,8 @@ while running:
 	#rainbow()
 	#print("Running: Blink Rainbow")
 	#blinkRanbow()
-	print("Running: FlashBang")
-	flashBang()
+	#print("Running: FlashBang")
+	#flashBang()
 	print("Running: Pacman")
 	pacman()
 	#print("Running: Double Rainbow")
