@@ -12,7 +12,7 @@ pixels = neopixel.NeoPixel(board.D18, 209)
 LED_COUNT      = 209     # Number of LED pixels(210leds).
 LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
 #LED_PIN       = 10    	 # GPIO pin connecwted to the pixels (10 uses SPI /dev/spidev0.0).
-LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
+LED_FREQ_HZ    = 2000000  # LED signal frequency in hertz (usually 800khz)
 LED_DMA        = 10      # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 255     # Set to 0 for darkest and 255 for brightest
 LED_INVERT     = False   # True to invert the signal (when using NPN transistor level shift)
@@ -253,7 +253,7 @@ def blinkRanbow():
 
 def flashBang():
 	for i in range(10):
-		delay=0.000001
+		delay=0
 		faceA(255,255,255,delay)
 		faceB(255,255,255,delay)
 		faceC(255,255,255,delay)
