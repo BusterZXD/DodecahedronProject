@@ -270,7 +270,7 @@ def blinkRanbow():
 	all_Off()
 
 def flashBang():
-	for i in range(5):
+	for i in range(20):
 		delay=0
 		pixels.fill((255,255,255))
 		#faceA(255,255,255,delay)
