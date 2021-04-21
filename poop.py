@@ -277,9 +277,8 @@ def pacman(): #fix speed and color
 	all_Off()
 
 def doubleRainbow():
-	delay=0.1
+	delay=0
 	for i in range(2):
-		time.sleep(0.5)
 		if i % 2==0:
 			faceA(247,16,55,delay)
 			faceB(247,16,194,delay)
