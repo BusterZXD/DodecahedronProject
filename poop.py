@@ -6,7 +6,7 @@ import random
 
 from rpi_ws281x import *
 
-pixels = neopixel.NeoPixel(board.D18, 30)
+pixels = neopixel.NeoPixel(board.D18, 209)
 
 ###########################LED strip configuration###########################################
 LED_COUNT      = 209     # Number of LED pixels(210leds).
@@ -202,7 +202,7 @@ def bottomRing(red,green,blue,delay):
 ###############################ALL LED OFF/RESET#########################################
 def all_Off():
 	for i in range(LED_COUNT):
-		print("Resetting led", i, "\n")
+		#print("Resetting led", i, "\n")
 		pixels[i] = (0, 0, 0)
 ###########################Main Functions################################################
 def solidColor(red,green,blue,delay):
