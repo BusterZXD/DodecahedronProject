@@ -87,7 +87,7 @@ def faceJ(red,green,blue,delay):
 		time.sleep(delay)
 
 def faceK(red,green,blue,delay):
-	for i in range(ValJ,ValK+1):
+	for i in range(ValJ,ValK):
 		pixels[i] = (red,green,blue)
 		time.sleep(delay)
 
