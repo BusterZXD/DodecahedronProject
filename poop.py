@@ -280,7 +280,7 @@ def pacman():
 	faceI(238,250,177,delay)
 	faceJ(238,250,177,delay)
 	faceK(238,250,177,delay)
-	for i in range(LED_COUNT)
+	for i in range(LED_COUNT):
 		pixels[i]=(255,251,118)
 		if i >=1:
 			pixels[i-1]=(0,0,0)
@@ -291,7 +291,7 @@ def pacman():
 
 def doubleRainbow():
 	delay=0.1
-	for i in range(3)
+	for i in range(3):
 		time.sleep(0.5)
 		if i % 2=0:
 			faceA(247,16,55,delay)
@@ -321,7 +321,7 @@ def doubleRainbow():
 	all_Off()
 
 def christmasTree():
-	for i in range(LED_COUNT)
+	for i in range(LED_COUNT):
 		if i % 2=0:
 			pixels[i]=(255,0,0)
 		elif i % 2=1:
@@ -344,10 +344,10 @@ def thunder():
 	edge6(64,57,255,0.05)
 
 def dying():
-	for i in range(3)
+	for i in range(3):
 		solidColor(0,255,145,0.01)
 		LED_BRIGHTNESS -= 50
-	for i in range(2)
+	for i in range(2):
 		solidColor(255,0,9,0.01)
 		LED_BRIGHTNESS -= 50
 	LED_BRIGHTNESS = 255
@@ -379,51 +379,51 @@ def allRandom():
 	num2=0
 	num3=0
 	for i in range(LED_COUNT):
-			num1=random.randint(0,255)
-			num2=random.randint(0,255)
-			num3=random.randint(0,255)
-			pixels[i] = (num1,num2,num3)
-			time.sleep(0.1)
+		num1=random.randint(0,255)
+		num2=random.randint(0,255)
+		num3=random.randint(0,255)
+		pixels[i] = (num1,num2,num3)
+		time.sleep(0.1)
 	all_Off()
 
 ####################################Gradients####################################################
 def fire():
-	for i in range(3)
-	solidColor(236,29,56,0.1)
-	solidColor(255,145,18,0.1)
-	solidColor(243,157,58,0.1)
-	solidColor(239,222,112,0.1)
-	solidColor(243,229,100,0.1)
+	for i in range(3):
+		solidColor(236,29,56,0.1)
+		solidColor(255,145,18,0.1)
+		solidColor(243,157,58,0.1)
+		solidColor(239,222,112,0.1)
+		solidColor(243,229,100,0.1)
 	all_Off()
 
 def megaTron():
-	for i in range(3)
-	solidColor(198,255,221,0.1)
-	solidColor(183,250,132,0.1)
-	solidColor(223,250,132,0.1)
-	solidColor(251,215,134,0.1)
-	solidColor(249,194,122,0.1)
-	solidColor(247,121,125,0.1)
+	for i in range(3):
+		solidColor(198,255,221,0.1)
+		solidColor(183,250,132,0.1)
+		solidColor(223,250,132,0.1)
+		solidColor(251,215,134,0.1)
+		solidColor(249,194,122,0.1)
+		solidColor(247,121,125,0.1)
 	all_Off()
 
 def jShine():
-	for i in range(3)
-	solidColor(18,194,233,0.1)
-	solidColor(123,98,249,0.1)
-	solidColor(169,98,249,0.1)
-	solidColor(194,98,249,0.1)
-	solidColor(229,98,249,0.1)
-	solidColor(249,98,239,0.1)
+	for i in range(3):
+		solidColor(18,194,233,0.1)
+		solidColor(123,98,249,0.1)
+		solidColor(169,98,249,0.1)
+		solidColor(194,98,249,0.1)
+		solidColor(229,98,249,0.1)
+		solidColor(249,98,239,0.1)
 	all_Off()
 
 def neon():
-	for i in range(3)
-	solidColor(63,8,135,0.1)
-	solidColor(106,54,174,0.1)
-	solidColor(130,80,196,0.1)
-	solidColor(189,68,208,0.1)
-	solidColor(215,62,215,0.1)
-	solidColor(252,29,215,0.1)
+	for i in range(3):
+		solidColor(63,8,135,0.1)
+		solidColor(106,54,174,0.1)
+		solidColor(130,80,196,0.1)
+		solidColor(189,68,208,0.1)
+		solidColor(215,62,215,0.1)
+		solidColor(252,29,215,0.1)
 	all_Off()
 #Main run area to call functions
 running = True;
