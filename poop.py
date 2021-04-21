@@ -3,6 +3,7 @@ import neopixel
 import time
 import argparse
 import random
+import numpy as np
 
 from rpi_ws281x import *
 
@@ -33,6 +34,59 @@ ValI           =188 #strip 26-27 (i)
 ValJ           =202 #strip 28-29 (j)
 ValK           =209 #strip 30 (k)
 
+
+class LightningBolt:
+    """A simple example class"""
+    startingEdge = 3
+	index = 0
+	dead = 0
+
+    def __init__(self, edge):
+		self.startingEdge = edge
+		self.dead = 1 
+        return 'hello world'
+		
+	def update()
+		if (self.dead == 0)
+			pixels[self.index] = (0,0,0)
+			self.index++
+			pixels[self.index] = (200,200,255)
+		
+		#check end of lightning
+		if (self.index > 20)
+			self.dead = 1
+			
+	def setAlive()
+		self.index = 0
+		self.dead = 0
+
+L1 = LightningBolt(0)
+L2 = LightningBolt(1)
+L3 = LightningBolt(2)
+L4 = LightningBolt(3)
+L5 = LightningBolt(4)
+
+while (True):
+
+	L1.update()
+	L2.update()
+	L3.update()
+	
+	L4.setAlive()
+
+class Edges:
+	def defineEdges
+		numEdges = 30
+		numLights = 7
+		edge = np.array([0 for i in range(numEdges)][for j in range(numLights)])
+
+	def tryPixels
+		for i in range(i,30):
+			for j in range(i,7):
+				pixels[edge[i][j]] = (150,50,25)
+
+E1 = Edges
+		
 ############################FUNCTIONS FOR FACES##########################################
 ####################Subfunctions for each bottom face####################################
 def faceA(red,green,blue,delay):
@@ -414,6 +468,9 @@ running = True;
 while running:
 	print("RESETTING LIGHTS")
 	all_Off()
+	
+	E1.defineEdges
+	E1.tryPixels
 	print("Running: Rainbow")
 	rainbow()
 	print("Running: Blink Rainbow")
