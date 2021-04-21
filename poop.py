@@ -74,12 +74,12 @@ ValK           =209 #strip 30 (k)
 	#L4.setAlive()
 
 class Edges:
-	def defineEdges
+	def defineEdges():
 		numEdges = 30
 		numLights = 7
 		edge = np.array([0 for i in range(numEdges)][for j in range(numLights)])
 
-	def tryPixels
+	def tryPixels():
 		for i in range(i,30):
 			for j in range(i,7):
 				pixels[edge[i][j]] = (150,50,25)
