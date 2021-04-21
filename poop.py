@@ -201,9 +201,11 @@ def bottomRing(red,green,blue,delay):
 	time.sleep(delay)
 ###############################ALL LED OFF/RESET#########################################
 def all_Off():
-	for i in range(LED_COUNT):
+	pixels.fill((0,0,0))
+	#for i in range(LED_COUNT):
 		#print("Resetting led", i, "\n")
-		pixels[i] = (0, 0, 0)
+		
+		#pixels[i] = (0, 0, 0)
 ###########################Main Functions################################################
 def solidColor(red,green,blue,delay):
 	pixels.fill((red,green,blue))
@@ -268,19 +270,20 @@ def blinkRanbow():
 	all_Off()
 
 def flashBang():
-	for i in range(3):
+	for i in range(5):
 		delay=0
-		faceA(255,255,255,delay)
-		faceB(255,255,255,delay)
-		faceC(255,255,255,delay)
-		faceD(255,255,255,delay)
-		faceE(255,255,255,delay)
-		faceF(255,255,255,delay)
-		faceG(255,255,255,delay)
-		faceH(255,255,255,delay)
-		faceI(255,255,255,delay)
-		faceJ(255,255,255,delay)
-		faceK(255,255,255,delay)
+		pixels.fill((255,255,255))
+		#faceA(255,255,255,delay)
+		#faceB(255,255,255,delay)
+		#faceC(255,255,255,delay)
+		#faceD(255,255,255,delay)
+		#faceE(255,255,255,delay)
+		#faceF(255,255,255,delay)
+		#faceG(255,255,255,delay)
+		#faceH(255,255,255,delay)
+		#faceI(255,255,255,delay)
+		#faceJ(255,255,255,delay)
+		#faceK(255,255,255,delay)
 		all_Off()
 	all_Off()
 
@@ -452,8 +455,8 @@ while running:
 	#rainbow()
 	#print("Running: Blink Rainbow")
 	#blinkRanbow()
-	#print("Running: FlashBang")
-	#flashBang()
+	print("Running: FlashBang")
+	flashBang()
 	#print("Running: Pacman")
 	#pacman()
 	#print("Running: Double Rainbow")
