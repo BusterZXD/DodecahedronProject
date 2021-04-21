@@ -36,7 +36,7 @@ ValK           =209 #strip 30 (k)
 
 
 #lass LightningBolt:
-    """A simple example class"""
+  #  """A simple example class"""
  #   startingEdge = 3
 	#index = 0
 	#dead = 0
