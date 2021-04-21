@@ -202,7 +202,7 @@ def bottomRing(red,green,blue,delay):
 ###############################ALL LED OFF/RESET#########################################
 def all_Off():
 	for i in range(LED_COUNT):
-	pixels[i] = (0, 0, 0)
+		pixels[i] = (0, 0, 0)
 ###########################Main Functions################################################
 def solidColor(red,green,blue,delay):
 	faceA(red,green,blue,delay)
