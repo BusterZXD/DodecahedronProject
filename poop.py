@@ -253,7 +253,7 @@ def blinkRanbow():
 
 def flashBang():
 	for i in range(10):
-		delay=0.0008
+		delay=0.000001
 		faceA(255,255,255,delay)
 		faceB(255,255,255,delay)
 		faceC(255,255,255,delay)
