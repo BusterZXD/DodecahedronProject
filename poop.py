@@ -305,19 +305,9 @@ def flashBang():
 	all_Off()
 def pacman(): #fix speed and color
 	delay=0
-	faceA(238,250,177,delay)
-	faceB(238,250,177,delay)
-	faceC(238,250,177,delay)
-	faceD(238,250,177,delay)
-	faceE(238,250,177,delay)
-	faceF(238,250,177,delay)
-	faceG(238,250,177,delay)
-	faceH(238,250,177,delay)
-	faceI(238,250,177,delay)
-	faceJ(238,250,177,delay)
-	faceK(238,250,177,delay)
+	pixels.fill((238,250,177))
 	for i in range(LED_COUNT):
-		pixels[i]=(255,251,118)
+		pixels[i]=(255,255,0)
 		if i >=1:
 			pixels[i-1]=(0,0,0)
 		elif i==0:
@@ -365,7 +355,7 @@ def christmasTree():
 	all_Off()
 
 def thunder():
-	topRing(255,255,255,0)
+	pixels.fill((255,255,255))
 	time.sleep(1)
 	edge7(64,57,255,0)
 	edge8(64,57,255,0)
@@ -473,8 +463,8 @@ while running:
 	#blinkRanbow()
 	print("Running: FlashBang")
 	flashBang()
-	#print("Running: Pacman")
-	#pacman()
+	print("Running: Pacman")
+	pacman()
 	#print("Running: Double Rainbow")
 	#doubleRainbow()
 	print("Running: Christmas Tree")
