@@ -335,7 +335,7 @@ def pacmanUpdated():
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num3:	
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				pixels[num3]=(0,0,0)
+				
 		
 
 				
