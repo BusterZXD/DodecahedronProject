@@ -14,8 +14,8 @@ pixelOutput = neopixel.NeoPixel(board.D18, 209)
 
 
 # maps
-ForwardEdgeMaps  = [1,8,15,22,29]
-BackwardEdgeMaps = [7,14,21,28,35]
+BackwardEdgeMaps  = [1,8,15,22,29]
+ForwardEdgeMaps = [7,14,21,28,35]
 pixelBuffer = [ (0,0,0) ] * 7 * 30
 objectList = []
 
@@ -70,13 +70,14 @@ class Firefly:
             if self.body[1] in BackwardEdgeMaps:
                 if self.body[1] in Junction.keys():
                     #left/right choices
-                    choices = Junction[body[1]]
+                    choices = Junction[self.body[1]]
                     print("Firefly B choices", choices)
                     self.body[1] = min(choices)
                     print("Firefly B moved to", self.body[1])
             else:
                 self.body[1] -= 1
-                
+				
+		print("Moved to ", self.body[1])
     
 
 def Clear():
@@ -94,9 +95,8 @@ def Clear():
 #    
 #    objectList.append(tempFirefly)
     
+Clear()
 f1 = Firefly(4,5,6)
-#print (f1.color)   
-
 objectList.append(f1)
 
 while True:
