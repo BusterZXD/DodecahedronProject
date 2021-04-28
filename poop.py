@@ -75,7 +75,7 @@ class Firefly:
                         NextChain = self.body[1] % 1
                         self.body[1] = thechoice - (1.0 -(self.body[1] % 1))
                   
-                  
+                  #2
                     #print("Firefly A moved to", self.body[1])
             else:
                 self.body[1] += speed
