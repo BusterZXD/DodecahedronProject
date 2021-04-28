@@ -315,7 +315,6 @@ def pacmanUpdated():
 		for j in range(LED_COUNT):
 			for num0 in range(LED_count):
 				num0 += 1
-				num0-1 = (255,255,255)
 				if j <= LED_COUNT:
 					pixels[j]=(255,255,0)
 				if j>=1:
