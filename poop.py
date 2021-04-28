@@ -301,7 +301,7 @@ def pacmanUpdated():
 	num2=0
 	num3=0
 	coin=0
-	pixels.fill((168,227,255))
+	pixels.fill((255,255,255))
 	num0=random.randint(15,LED_COUNT)#random ghost1 spawn
 	pixels[num0]=(255,0,230)
 	num1=random.randint(15,LED_COUNT)#random ghost2 spawn
