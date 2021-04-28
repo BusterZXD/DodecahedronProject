@@ -331,7 +331,7 @@ def pacmanUpdated():
 		if coin==0:
 			break
 			print("PAC-MAN DIED!!!!!!!")
-	all_Off()
+all_Off()
 				
 def flashBangRainbow():
 	for i in range(20):
