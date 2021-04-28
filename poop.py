@@ -14,22 +14,22 @@ pixelOutput = neopixel.NeoPixel(board.D18, 209)
 
 
 # maps
-BackwardEdgeMaps  = [1,8,15,22,29]
-ForwardEdgeMaps = [7,14,21,28,35]
+BackwardEdgeMaps  = [0,7,14,21,28]
+ForwardEdgeMaps   = [6,13,20,27,34]
 pixelBuffer = [ (0,0,0) ] * 7 * 30
 objectList = []
 
 Junction = {
-    7: [8, 99],
-    8: [99, 7],
-    14: [15, 99],
-    15: [99, 14],
-    21: [22,99],
-    22: [99, 21],
-    28: [29, 99],
-    29: [99, 28],
-    35: [1, 99],
-    1: [99, 35]
+     6: [7,  99],
+     7: [99,  6],
+    13: [14, 99],
+    14: [99, 13],
+    20: [21, 99],
+    21: [99, 20],
+    27: [28, 99],
+    28: [99, 27],
+    34: [ 0, 99],
+     0: [99, 34]
 }
 
 class Firefly:
@@ -48,10 +48,15 @@ class Firefly:
         
     def Undraw(self):
         pixelOutput[self.body[1]] = (0,0,0)
+		pixelBuffer[self.body[1]] = (0,0,0)
 
     def Draw(self):
-        tuple(map(operator.add, pixelBuffer[self.body[1]], self.color))
-        
+		# update tuples
+		pixelBuffer[self.body[1]] = (
+			pixelBuffer[self.body[1]][0] + self.color[0],
+			pixelBuffer[self.body[1]][1] + self.color[1],
+			pixelBuffer[self.body[1]][2] + self.color[2]
+		)
     
     def Update(self):
         
@@ -96,7 +101,7 @@ def Clear():
 #    objectList.append(tempFirefly)
     
 Clear()
-f1 = Firefly(4,5,6)
+f1 = Firefly(3,4,5)
 objectList.append(f1)
 
 while True:
@@ -115,6 +120,6 @@ while True:
         if (  pixelBuffer[i] != (0,0,0) ):
             pixelOutput[i] = pixelBuffer[i]
             
-    time.sleep(1)
+    time.sleep(0.5)
         
         
