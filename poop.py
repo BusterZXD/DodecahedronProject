@@ -347,9 +347,7 @@ def pacmanUpdated():
 			if j==num3:	
 				pixels[num3]=(0,0,0,)
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				break
-		break
-		condition = 0	
+				break	
 
 				
 def flashBangRainbow():
