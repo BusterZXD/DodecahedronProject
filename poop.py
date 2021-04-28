@@ -307,7 +307,7 @@ def pacmanUpdated():
 	num1=random.randint(15,LED_COUNT)#random ghost2 spawn
 	pixels[num1]=(218,28,28)
 	num2=random.randint(15,LED_COUNT)#random ghost3 spawn
-	pixels[num2]=(0S,0,255)
+	pixels[num2]=(0,0,255)
 	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
 	pixels[num3]=(78,218,28)
 	while condition == 1:
