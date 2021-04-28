@@ -34,12 +34,13 @@ Junction = {
 
 class Firefly:
     
-    body = [1.0,1.0,1.0]
+    head = 0
+    body = [1.0,1.0,1.0,1.0,1.0]
     color = (128,128,128)
     direction = 0
     
     def __init__(self, index, speed):
-        self.body = [index, index, index]
+        self.body = [index, index, index, index, index]
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,0)
         
@@ -47,48 +48,74 @@ class Firefly:
         del self
         
     def Undraw(self):
-        pixelOutput[self.body[1]] = (0,0,0)
-        pixelBuffer[self.body[1]] = (0,0,0)
+        for i in range(0,4):
+            pixelOutput[int(round(self.body[i]))] = (0,0,0)
+            pixelBuffer[int(round(self.body[i]))] = (0,0,0)
 
+    def moveTrail(self):
+        for i in range(1,4):
+            self.body[i] = self.body[i-1]
+            
     def Draw(self):
         # update tuples
-        pixelBuffer[self.body[1]] = (
-            pixelBuffer[self.body[1]][0] + self.color[0],
-            pixelBuffer[self.body[1]][1] + self.color[1],
-            pixelBuffer[self.body[1]][2] + self.color[2]
-        )
+        for i in range(0,4):
+            pixelBuffer[self.body[i]] = (
+                pixelBuffer[int(round(self.body[i]))][0] + self.color[0]/i,
+                pixelBuffer[int(round(self.body[i]))][1] + self.color[1]/i,
+                pixelBuffer[int(round(self.body[i]))][2] + self.color[2]/i
+            )
     
     def Update(self):
         
         #  check if we need to turn
         if self.direction == 1:
-            if round(self.body[1]) in ForwardEdgeMaps:
-                if round(self.body[1]) in Junction.keys():
+            if int(round(self.body[head])) in ForwardEdgeMaps:
+                if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
-                    choices = Junction[self.body[1]]
+                    choices = Junction[int(round(self.body[1]))]
                     #print("Firefly A choices", choices)
                     thechoice = min(choices)
-                    self.body[1] += speed
+                    
+                    moveTrail()
+                    
+                    self.body[head] += speed
                     
                     # jump to next chain
-                    if (self.body[1] % 1) > 0.5:
-                        NextChain = self.body[1] % 1
-                        self.body[1] = thechoice - (1.0 -(self.body[1] % 1))
+                    fraction = (self.body[head] % 1)
+                    if fraction > 0.5:
+                        self.body[head] = thechoice - (1.0 - fraction)
+                  
+                    
                   
                   #2
                     #print("Firefly A moved to", self.body[1])
             else:
-                self.body[1] += speed
+                moveTrail()
+                self.body[head] += speed
+                
+                
         elif self.direction == 0:
-            if self.body[1] in BackwardEdgeMaps:
-                if self.body[1] in Junction.keys():
+            if int(round(self.body[head])) in BackwardEdgeMaps:
+                if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
-                    choices = Junction[self.body[1]]
+                    choices = Junction[int(round(self.body[head]))]
                     #print("Firefly B choices", choices)
-                    self.body[1] = min(choices)
+                    thechoice = min(choices)
                     #print("Firefly B moved to", self.body[1])
+                              
+                    moveTrail()
+                    self.body[head] -= speed
+                                
+                    # jump to next chain
+                    fraction = 1.0 - ((self.body[head]-1) % 1)
+                    if fraction > 0.5:
+                        self.body[head] = thechoice + (1.0 - fraction)
+                  
+                    
             else:
-                self.body[1] -= speed
+                moveTrail()
+                self.body[head] -= speed
+                
                 
         #print("Moved to ", self.body[1])
     
@@ -98,20 +125,11 @@ def Clear():
         
 
 
-# makeabunchof fireflies
-
-#for i in range(1, 1+random.randrange(10)):
-#    print(i)
-#    
-#    index = (4 + i*7)
-#    tempFirefly = Firefly(index-1, index, index+1)
-#    
-#    objectList.append(tempFirefly)
     
 Clear()
 for i in range(0, 3):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.1, 1.5) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.3) )
     objectList.append(f1)
 
 while True:
@@ -129,12 +147,12 @@ while True:
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
             pixelOutput[i] = (
-                min(255, pixelBuffer[i][0]), 
-                min(255, pixelBuffer[i][1]), 
-                min(255, pixelBuffer[i][2])
+                min(255, int(round(pixelBuffer[i][0])), 
+                min(255, int(round(pixelBuffer[i][1])), 
+                min(255, int(round(pixelBuffer[i][2]))
             )
-            
+    
     pixelOutput.show()
-    time.sleep(0.01)
+    time.sleep(0.005)
         
         
