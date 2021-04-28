@@ -78,9 +78,9 @@ class Firefly:
                     #print("Firefly A choices", choices)
                     thechoice = min(choices)
                     
-                    moveTrail()
+                    self.moveTrail()
                     
-                    self.body[head] += speed
+                    self.body[head] += self.speed
                     
                     # jump to next chain
                     fraction = (self.body[head] % 1)
@@ -92,8 +92,8 @@ class Firefly:
                   #2
                     #print("Firefly A moved to", self.body[1])
             else:
-                moveTrail()
-                self.body[head] += speed
+                self.moveTrail()
+                self.body[head] += self.speed
                 
                 
         elif self.direction == 0:
@@ -105,8 +105,8 @@ class Firefly:
                     thechoice = min(choices)
                     #print("Firefly B moved to", self.body[1])
                               
-                    moveTrail()
-                    self.body[head] -= speed
+                    self.moveTrail()
+                    self.body[head] -= self.speed
                                 
                     # jump to next chain
                     fraction = 1.0 - ((self.body[head]-1) % 1)
@@ -115,8 +115,8 @@ class Firefly:
                   
                     
             else:
-                moveTrail()
-                self.body[head] -= speed
+                self.moveTrail()
+                self.body[head] -= self.speed
                 
                 
         #print("Moved to ", self.body[1])
