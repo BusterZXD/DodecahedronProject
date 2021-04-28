@@ -440,19 +440,16 @@ def ringsRanbowFlicker():
 	topRing(255,0,0,0)
 	middleRing(255,162,0,0)
 	bottomRing(255,247,0,0)
-	all_Off()
 	topRing(128,255,0,0)
 	middleRing(0,255,154,0)
 	bottomRing(0,255,239,0)
-	all_Off()
 	topRing(0,145,255,0)
 	middleRing(0,9,255,0)
 	bottomRing(145,0,255,0)
-	all_Off()
 	topRing(247,0,255,0)
 	middleRing(255,0,171,0)
 	bottomRing(255,0,77,0)
-	all_Off()
+
 
 def allRandom():
 	num1=0
