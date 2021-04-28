@@ -48,15 +48,15 @@ class Firefly:
         
     def Undraw(self):
         pixelOutput[self.body[1]] = (0,0,0)
-		pixelBuffer[self.body[1]] = (0,0,0)
+        pixelBuffer[self.body[1]] = (0,0,0)
 
     def Draw(self):
-		# update tuples
-		pixelBuffer[self.body[1]] = (
-			pixelBuffer[self.body[1]][0] + self.color[0],
-			pixelBuffer[self.body[1]][1] + self.color[1],
-			pixelBuffer[self.body[1]][2] + self.color[2]
-		)
+        # update tuples
+        pixelBuffer[self.body[1]] = (
+            pixelBuffer[self.body[1]][0] + self.color[0],
+            pixelBuffer[self.body[1]][1] + self.color[1],
+            pixelBuffer[self.body[1]][2] + self.color[2]
+        )
     
     def Update(self):
         
