@@ -334,7 +334,7 @@ def pacmanUpdated():
 				coin = random.randint(j,LED_COUNT)
 				pixels[j]=(0,0,0)
 				pixels[coin]=(255,255,0)
-				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
+
 				
 				
 				print("PAC-MAN DIED!!!!!!!")
