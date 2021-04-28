@@ -43,8 +43,12 @@ class Firefly:
     speed = 1
     
     def __init__(self, index, speed):
-        self.length = random.randint(1, 30)
-        self.body = [index] * self.length
+        self.speed = speed;
+        if (self.speed == int(self.speed))
+            self.speed += 0.1
+            
+        self.length = int(self.speed*30)
+        self.body = [index*1.0] * self.length
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
         
@@ -58,7 +62,7 @@ class Firefly:
 
     def moveTrail(self):
         self.body.pop( len(self.body) - 1)
-        self.body.insert(0, self.body[0])
+        self.body.insert(0, self.body[0]*1.0)
         #for i in range(0, self.length-1):
         #    self.body[self.length-i] = self.body[self.length-(i-1)]
             
@@ -78,17 +82,14 @@ class Firefly:
             if int(round(self.body[head])) in ForwardEdgeMaps:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
-                    choices = Junction[int(round(self.body[1]))]
-                    #print("Firefly A choices", choices)
+                    choices = Junction[int(round(self.body[head]))]
                     thechoice = min(choices)
-                    
                     self.moveTrail()
-                    
                     self.body[head] += self.speed
                     
                     # jump to next chain
                     fraction = (self.body[head] % 1)
-                    if fraction > 0.5:
+                    if fraction >= 0.5:
                         self.body[head] = thechoice - (1.0 - fraction)
                   
                     
@@ -105,16 +106,13 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    #print("Firefly B choices", choices)
                     thechoice = min(choices)
-                    #print("Firefly B moved to", self.body[1])
-                              
                     self.moveTrail()
                     self.body[head] -= self.speed
                                 
                     # jump to next chain
                     fraction = 1.0 - ((self.body[head]-1) % 1)
-                    if fraction > 0.5:
+                    if fraction >= 0.5:
                         self.body[head] = thechoice + (1.0 - fraction)
                   
                     
@@ -135,7 +133,7 @@ def Clear():
 Clear()
 for i in range(0, 3):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.3) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.8) )
     objectList.append(f1)
 
 while True:
