@@ -321,6 +321,7 @@ def pacmanUpdated():
 			pixels[num3-1]=(78,218,28)
 			pixels[num3]=(168,227,255)
 		pixels[j]=(255,255,0)
+		time.sleep(0.05)
 		if j>=1:
 			pixels[j-1]=(0,0,0)
 		if j==0:
