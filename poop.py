@@ -41,7 +41,7 @@ class Firefly:
     def __init__(self, index, speed):
         self.body = [index, index, index]
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
-        self.direction = random.randint(0,1)
+        self.direction = random.randint(0,0)
         
     def Suicide(self):
         del self
@@ -71,8 +71,11 @@ class Firefly:
                     self.body[1] += speed
                     
                     # jump to next chain
-                    if (self.body[1] % 1) > 0.5
-                    
+                    if (self.body[1] % 1) > 0.5:
+                        NextChain = self.body[1] % 1
+                        self.body[1] = thechoice - (1.0 -(self.body[1] % 1))
+                  
+                  
                     #print("Firefly A moved to", self.body[1])
             else:
                 self.body[1] += speed
@@ -132,6 +135,6 @@ while True:
             )
             
     pixelOutput.show()
-    time.sleep(0.001)
+    time.sleep(0.01)
         
         
