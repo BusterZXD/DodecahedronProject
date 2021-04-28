@@ -313,7 +313,7 @@ def pacmanUpdated():
 	while condition == 1:
 
 		for j in range(LED_COUNT):
-			for num0 inrange(LED_count)
+			for num0 in range(LED_count)
 				num0 += 1
 				num0-1 = (255,255,255)
 				if j <= LED_COUNT:
