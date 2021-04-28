@@ -463,7 +463,6 @@ def allRandom():
 		num2=random.randint(0,255)
 		num3=random.randint(0,255)
 		pixels[i] = (num1,num2,num3)
-	all_Off()
 
 ####################################Gradients####################################################
 def fire():
