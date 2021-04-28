@@ -305,11 +305,9 @@ def pacmanUpdated():
 	for j in range(LED_COUNT):
 		pixels[j]=(255,255,0)
 		if j>=1:
-			print("OFF -1")
-			pixels[i-1]=(0,0,0)
+			pixels[j-1]=(0,0,0)
 		elif j==0:
-			print("OFF -2")
-			pixels[i]=(0,0,0)
+			pixels[j]=(0,0,0)
 		elif pixels[i]==(255,255,0):
 			coin=random.randint(0,1)
 			if coin==0:
