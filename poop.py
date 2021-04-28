@@ -10,7 +10,7 @@ import colorsys
 import operator
 
 from rpi_ws281x import *
-pixelOutput = neopixel.NeoPixel(board.D18, 209)
+pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
 
 
 # maps
@@ -40,7 +40,7 @@ class Firefly:
     
     def __init__(self, index1,index2,index3):
         self.body = [index1, index2, index3]
-        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 0.5, 0.5))
+        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
         
     def Suicide(self):
@@ -66,9 +66,9 @@ class Firefly:
                 if self.body[1] in Junction.keys():
                     #left/right choices
                     choices = Junction[self.body[1]]
-                    print("Firefly A choices", choices)
+                    #print("Firefly A choices", choices)
                     self.body[1] = min(choices)
-                    print("Firefly A moved to", self.body[1])
+                    #print("Firefly A moved to", self.body[1])
             else:
                 self.body[1] += 1
         elif self.direction == 0:
@@ -76,13 +76,13 @@ class Firefly:
                 if self.body[1] in Junction.keys():
                     #left/right choices
                     choices = Junction[self.body[1]]
-                    print("Firefly B choices", choices)
+                    #print("Firefly B choices", choices)
                     self.body[1] = min(choices)
-                    print("Firefly B moved to", self.body[1])
+                    #print("Firefly B moved to", self.body[1])
             else:
                 self.body[1] -= 1
                 
-        print("Moved to ", self.body[1])
+        //print("Moved to ", self.body[1])
     
 
 def Clear():
@@ -101,8 +101,10 @@ def Clear():
 #    objectList.append(tempFirefly)
     
 Clear()
-f1 = Firefly(3,4,5)
-objectList.append(f1)
+for i in range(0, 12)
+
+    f1 = Firefly(0, (3 + 7*i)%35, 0)
+    objectList.append(f1)
 
 while True:
     
@@ -118,8 +120,13 @@ while True:
     # smart draw
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
-            pixelOutput[i] = pixelBuffer[i]
+            pixelOutput[i] = (
+                min(255, pixelBuffer[i][0]), 
+                min(255, pixelBuffer[i][1]), 
+                min(255, pixelBuffer[i][2])
+            )
             
-    time.sleep(0.5)
+    pixelOutput.show()
+    time.sleep(0.001)
         
         
