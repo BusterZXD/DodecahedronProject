@@ -301,7 +301,6 @@ def pacmanUpdated():
 	num2=0
 	num3=0
 	coin=0
-	ghostholder=0
 	pixels.fill((168,227,255))
 	num0=random.randint(15,LED_COUNT)#random ghost1 spawn
 	pixels[num0]=(255,0,230)
@@ -326,7 +325,13 @@ def pacmanUpdated():
 			pixels[j-1]=(0,0,0)
 		elif j==0:
 			pixels[j]=(0,0,0)
-		elif pixels[i]==(255,255,0):
+		elif pixels[j]==(255,0,230):
+			coin=random.randint(0,2)
+		elif pixels[j]==(218,28,28):
+			coin=random.randint(0,2)
+		elif pixels[j]==(28,148,255):
+			coin=random.randint(0,2)
+		elif pixels[j]==(78,218,28):
 			coin=random.randint(0,2)
 		if coin==0:
 			break
