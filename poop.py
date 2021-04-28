@@ -301,13 +301,14 @@ def pacmanUpdated():
 	pixels.fill((168,227,255))
 	for i in range(4):
 		num=random.randint(0,LED_COUNT)
-		pixels[num]=(255,169,247)
+		pixels[num]=(255,0,230)
 	for j in range(LED_COUNT):
-		if i >=1:
+		pixels[j]=(255,255,0)
+		if j >=1:
 			pixels[i-1]=(0,0,0)
-		elif i==0:
+		elif j==0:
 			pixels[i]=(0,0,0)
-		elif pixels[i]==(255,169,247):
+		elif pixels[i]==(255,255,0):
 			coin=random.randint(0,1)
 			if coin==0:
 				break
