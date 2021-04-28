@@ -37,34 +37,36 @@ head = 0
 class Firefly:
     
     
-    body = [1.0,1.0,1.0,1.0,1.0]
+    body = []
     color = (128,128,128)
     direction = 0
+    speed = 1
     
     def __init__(self, index, speed):
-        self.body = [index, index, index, index, index]
+        self.length = random.randint(1, 30)
+        self.body = [index] * length
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
-        self.direction = random.randint(0,0)
+        self.direction = random.randint(0,1)
         
     def Suicide(self):
         del self
         
     def Undraw(self):
-        for i in range(0,4):
+        for i in range(len(self.length)):
             pixelOutput[int(round(self.body[i]))] = (0,0,0)
             pixelBuffer[int(round(self.body[i]))] = (0,0,0)
 
     def moveTrail(self):
-        for i in range(1,4):
+        for i in range(len(self.length)):
             self.body[i] = self.body[i-1]
             
     def Draw(self):
         # update tuples
-        for i in range(0,4):
-            pixelBuffer[self.body[i]] = (
-                pixelBuffer[int(round(self.body[i]))][0] + self.color[0]/i,
-                pixelBuffer[int(round(self.body[i]))][1] + self.color[1]/i,
-                pixelBuffer[int(round(self.body[i]))][2] + self.color[2]/i
+        for i in range(len(self.length)):
+            pixelBuffer[int(round(self.body[i]])) = (
+                pixelBuffer[int(round(self.body[i]))][0] + self.color[0]/((i+1)*1.0),
+                pixelBuffer[int(round(self.body[i]))][1] + self.color[1]/((i+1)*1.0),
+                pixelBuffer[int(round(self.body[i]))][2] + self.color[2]/((i+1)*1.0)
             )
     
     def Update(self):
