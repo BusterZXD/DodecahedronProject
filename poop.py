@@ -89,7 +89,7 @@ def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
         
 
-
+#2
 # makeabunchof fireflies
 
 #for i in range(1, 1+random.randrange(10)):
