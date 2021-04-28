@@ -291,9 +291,11 @@ def blinkRanbow():
 		faceI(155,16,247,delay)
 		faceJ(247,16,194,delay)
 		faceK(247,16,55,delay)
-		allOff()
+		all_Off()
+	all_Off()
 
 def pacmanUpdated():
+	condition = true
 	num0=0
 	num1=0
 	num2=0
@@ -308,6 +310,7 @@ def pacmanUpdated():
 	pixels[num2]=(28,148,255)
 	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
 	pixels[num3]=(78,218,28)
+	while condition:
 	for j in range(LED_COUNT):
 		if j <= LED_COUNT:
 			pixels[num0-1]=(255,0,230)
@@ -319,20 +322,20 @@ def pacmanUpdated():
 			pixels[num3-1]=(78,218,28)
 			pixels[num3]=(168,227,255)
 		pixels[j]=(255,255,0)
-		time.sleep(0.05)
 		if j>=1:
 			pixels[j-1]=(0,0,0)
 		if j==0:
 			pixels[j]=(0,0,0)
+			
 		if j==num0:
-			coin=random.randint(0,2)
-		if j==num1:
-			coin=random.randint(0,2)
-		if j==num2:
-			coin=random.randint(0,2)
-		if j==num3:
-			coin=random.randint(0,2)
-		if coin==0:
+			condition = false
+		elif j==num1:
+			condition = false 
+		elif j==num2:
+			condition = false
+		elif j==num3:
+			condition = false	
+		
 			break
 			print("PAC-MAN DIED!!!!!!!")
 
@@ -505,13 +508,13 @@ running = True;
 while running:
 	print("RESETTING LIGHTS")
 	all_Off()
-	#print("Running: updated pac-man")
-	#pacmanUpdated()
-	print("Running: Rainbow")
-	rainbow()
-	print("Running: Blink Rainbow")
-	blinkRanbow()
-	print("Running: FlashBang")
+	print("Running: updated pac-man")
+	pacmanUpdated()
+	#print("Running: Rainbow")
+	#rainbow()
+	#print("Running: Blink Rainbow")
+	#blinkRanbow()
+	#print("Running: FlashBang")
 	flashBang()
 	#print("Running: Pacman")
 	#pacman()
@@ -519,10 +522,10 @@ while running:
 	#doubleRainbow()
 	#print("Running: Christmas Tree")
 	#christmasTree()
-	print("Running: Falsh Bang Rainbow")
-	flashBangRainbow()
-	print("Running: Thunder")
-	thunder()
+	#print("Running: Falsh Bang Rainbow")
+	#flashBangRainbow()
+	#print("Running: Thunder")
+	#thunder()
 	#print("Running: FlashBang")
 	#flashBang()
 	#print("Running: Dying")
