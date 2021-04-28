@@ -73,18 +73,18 @@ ValK           =209 #strip 30 (k)
 	
 	#L4.setAlive()
 
-class Edges:
-	def defineEdges():
-		numEdges = 30
-		numLights = 7
-		edge = np.array([0 for i in range(numEdges)][for j in range(numLights)])
+#class Edges:
+#	def defineEdges():
+#		numEdges = 30
+#		numLights = 7
+#		edge = np.array([for i in range(numEdges)][for j in range(numLights)])
 
-	def tryPixels():
-		for i in range(i,30):
-			for j in range(i,7):
-				pixels[edge[i][j]] = (150,50,25)
+#	def tryPixels():
+#		for i in range(i,30):
+#			for j in range(i,7):
+#				pixels[edge[i][j]] = (150,50,25)
 
-E1 = Edges
+#E1 = Edges
 		
 ############################FUNCTIONS FOR FACES##########################################
 ####################Subfunctions for each bottom face####################################
@@ -295,6 +295,25 @@ def blinkRanbow():
 		all_Off()
 	all_Off()
 
+def pacmanUpdated():
+	num=0
+	coin=0
+	pixels.fill((168,227,255))
+	for i in range(4)
+		num=random.randint(0,LED_COUNT)
+		pixels[num]=(255,169,247)
+	for j in range(LED_COUNT)	
+		if i >=1:
+			pixels[i-1]=(0,0,0)
+		elif i==0:
+			pixels[i]=(0,0,0)
+		elif pixels[i]==(255,169,247):
+			coin=random.randint(0,1)
+			if coin==0:
+				break
+				print("PAC-MAN DIED!!!!!!")
+	all_Off()
+				
 def flashBangRainbow():
 	for i in range(20):
 		delay=0
@@ -467,9 +486,8 @@ running = True;
 while running:
 	print("RESETTING LIGHTS")
 	all_Off()
-	
-	E1.defineEdges
-	E1.tryPixels
+	print("Running: updated pac-man")
+	pacmanUpdated()
 	print("Running: Rainbow")
 	rainbow()
 	print("Running: Blink Rainbow")
