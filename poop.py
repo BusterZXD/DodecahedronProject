@@ -276,7 +276,6 @@ def rainbow():
 	faceI(186,247,16,delay)
 	faceJ(247,240,16,delay)
 	faceK(247,163,16,delay)
-	all_Off()
 
 def blinkRanbow():
 	for i in range(3):
@@ -292,7 +291,6 @@ def blinkRanbow():
 		faceI(155,16,247,delay)
 		faceJ(247,16,194,delay)
 		faceK(247,16,55,delay)
-		all_Off()
 	all_Off()
 
 def pacmanUpdated():
