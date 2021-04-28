@@ -311,33 +311,32 @@ def pacmanUpdated():
 	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
 	pixels[num3]=(78,218,28)
 	while condition == 1:
-		pixels[j]=(255,255,0)
 		for j in range(LED_COUNT):
-			
+			pixels[j]=(255,255,0)
 			if j>=1:
 				pixels[j-1]=(0,0,0)
 
 			if j==num0:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
 				pixels[num0]=(0,0,0,)
-				break
+				
 				all_Off()
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num1:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
 				pixels[num1]=(0,0,0,)
-				break 
+				
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num2:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
 				pixels[num2]=(0,0,0)
 				pixels
-				break
+				
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num3:	
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
 				pixels[num3]=(0,0,0)
-				break	
+		
 
 				
 def flashBangRainbow():
