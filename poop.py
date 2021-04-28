@@ -321,13 +321,13 @@ def pacmanUpdated():
 				coin = random.randint(j,LED_COUNT)
 				pixels[j]=(0,0,0)
 				pixels[coin]=(255,255,0)
-				break
+			
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num1:
 				coin = random.randint(j,LED_COUNT)
 				pixels[j]=(0,0,0)
 				pixels[coin]=(255,255,0)
-				break
+				
 				
 			print("PAC-MAN DIED!!!!!!!")
 			if j==num2:
@@ -335,14 +335,14 @@ def pacmanUpdated():
 				pixels[j]=(0,0,0)
 				pixels[coin]=(255,255,0)
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				break
+				
 				
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num3:	
 				coin = random.randint(j,LED_COUNT)
 				pixels[j]=(0,0,0)
 				pixels[random.randint(coin)]=(255,255,0)
-				break
+				
 		
 
 				
