@@ -34,12 +34,12 @@ Junction = {
 
 class Firefly:
     
-    body = [1,2,3]
+    body = [1.0,1.0,1.0]
     color = (128,128,128)
     direction = 0
     
-    def __init__(self, index1,index2,index3):
-        self.body = [index1, index2, index3]
+    def __init__(self, index, speed):
+        self.body = [index, index, index]
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
         
@@ -62,15 +62,20 @@ class Firefly:
         
         #  check if we need to turn
         if self.direction == 1:
-            if self.body[1] in ForwardEdgeMaps:
-                if self.body[1] in Junction.keys():
+            if round(self.body[1]) in ForwardEdgeMaps:
+                if round(self.body[1]) in Junction.keys():
                     #left/right choices
                     choices = Junction[self.body[1]]
                     #print("Firefly A choices", choices)
-                    self.body[1] = min(choices)
+                    thechoice = min(choices)
+                    self.body[1] += speed
+                    
+                    # jump to next chain
+                    if (self.body[1] % 1) > 0.5
+                    
                     #print("Firefly A moved to", self.body[1])
             else:
-                self.body[1] += 1
+                self.body[1] += speed
         elif self.direction == 0:
             if self.body[1] in BackwardEdgeMaps:
                 if self.body[1] in Junction.keys():
@@ -80,7 +85,7 @@ class Firefly:
                     self.body[1] = min(choices)
                     #print("Firefly B moved to", self.body[1])
             else:
-                self.body[1] -= 1
+                self.body[1] -= speed
                 
         #print("Moved to ", self.body[1])
     
@@ -89,7 +94,7 @@ def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
         
 
-#2
+
 # makeabunchof fireflies
 
 #for i in range(1, 1+random.randrange(10)):
@@ -101,9 +106,9 @@ def Clear():
 #    objectList.append(tempFirefly)
     
 Clear()
-for i in range(0, 12)
+for i in range(0, 3):
 
-    f1 = Firefly(0, (3 + 7*i)%35, 0)
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.1, 1.5) )
     objectList.append(f1)
 
 while True:
