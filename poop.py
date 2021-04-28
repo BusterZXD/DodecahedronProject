@@ -82,7 +82,7 @@ class Firefly:
             else:
                 self.body[1] -= 1
                 
-        //print("Moved to ", self.body[1])
+        #print("Moved to ", self.body[1])
     
 
 def Clear():
