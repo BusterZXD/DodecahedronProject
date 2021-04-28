@@ -57,8 +57,10 @@ class Firefly:
             pixelBuffer[int(round(self.body[i]))] = (0,0,0)
 
     def moveTrail(self):
-        for i in range(0, self.length-1):
-            self.body[self.length-i] = self.body[self.length-(i-1)]
+        self.body.pop( len(self.body) - 1)
+        self.body.insert(0, self.body[0])
+        #for i in range(0, self.length-1):
+        #    self.body[self.length-i] = self.body[self.length-(i-1)]
             
     def Draw(self):
         # update tuples
