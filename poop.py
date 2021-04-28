@@ -311,7 +311,7 @@ def pacmanUpdated():
 			coin=random.randint(0,1)
 			if coin==0:
 				break
-				print("PAC-MAN DIED!!!!!!")
+				print("PAC-MAN DIED!!!!!!!")
 	all_Off()
 				
 def flashBangRainbow():
