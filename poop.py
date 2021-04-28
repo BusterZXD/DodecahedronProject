@@ -295,7 +295,7 @@ def blinkRanbow():
 	all_Off()
 
 def pacmanUpdated():
-	condition = true
+	condition = 1
 	num0=0
 	num1=0
 	num2=0
@@ -310,7 +310,7 @@ def pacmanUpdated():
 	pixels[num2]=(28,148,255)
 	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
 	pixels[num3]=(78,218,28)
-	while condition:
+	while condition = 1:
 		for j in range(LED_COUNT):
 			if j <= LED_COUNT:
 				pixels[num0-1]=(255,0,230)
@@ -327,13 +327,13 @@ def pacmanUpdated():
 			if j==0:
 				pixels[j]=(0,0,0)
 			if j==num0:
-				condition = false
+				condition = 0
 			elif j==num1:
-				condition = false 
+				condition = 0 
 			elif j==num2:
-				condition = false
+				condition = 0
 			elif j==num3:
-				condition = false	
+				condition = 0	
 				break
 				print("PAC-MAN DIED!!!!!!!")
 
