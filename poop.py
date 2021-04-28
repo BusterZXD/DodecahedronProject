@@ -44,7 +44,7 @@ class Firefly:
     
     def __init__(self, index, speed):
         self.length = random.randint(1, 30)
-        self.body = [index] * length
+        self.body = [index] * self.length
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
         
@@ -52,17 +52,17 @@ class Firefly:
         del self
         
     def Undraw(self):
-        for i in range(len(self.length)):
+        for i in range(self.length):
             pixelOutput[int(round(self.body[i]))] = (0,0,0)
             pixelBuffer[int(round(self.body[i]))] = (0,0,0)
 
     def moveTrail(self):
-        for i in range(len(self.length)):
-            self.body[i] = self.body[i-1]
+        for i in range(0, self.length-1):
+            self.body[self.length-i] = self.body[self.length-(i-1)]
             
     def Draw(self):
         # update tuples
-        for i in range(len(self.length)):
+        for i in range(self.length):
             pixelBuffer[int(round(self.body[i]))] = (
                 pixelBuffer[int(round(self.body[i]))][0] + self.color[0]/((i+1)*1.0),
                 pixelBuffer[int(round(self.body[i]))][1] + self.color[1]/((i+1)*1.0),
