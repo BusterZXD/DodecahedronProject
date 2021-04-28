@@ -323,15 +323,15 @@ def pacmanUpdated():
 		pixels[j]=(255,255,0)
 		if j>=1:
 			pixels[j-1]=(0,0,0)
-		elif j==0:
+		if j==0:
 			pixels[j]=(0,0,0)
-		if pixels[j]==(255,0,230):
+		if j==num0:
 			coin=random.randint(0,2)
-		elif pixels[j]==(218,28,28):
+		if j==num1:
 			coin=random.randint(0,2)
-		elif pixels[j]==(28,148,255):
+		if j==num2:
 			coin=random.randint(0,2)
-		elif pixels[j]==(78,218,28):
+		if j==num3:
 			coin=random.randint(0,2)
 		if coin==0:
 			break
