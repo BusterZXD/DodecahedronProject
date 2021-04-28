@@ -44,10 +44,10 @@ class Firefly:
     
     def __init__(self, index, speed):
         self.speed = speed;
-        if (self.speed == int(self.speed))
+        if (self.speed == int(self.speed)):
             self.speed += 0.1
             
-        self.length = int(self.speed*30)
+        self.length = 1+int(self.speed*30)
         self.body = [index*1.0] * self.length
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
