@@ -63,7 +63,7 @@ class Firefly:
     def Draw(self):
         # update tuples
         for i in range(len(self.length)):
-            pixelBuffer[int(round(self.body[i]])) = (
+            pixelBuffer[int(round(self.body[i]))] = (
                 pixelBuffer[int(round(self.body[i]))][0] + self.color[0]/((i+1)*1.0),
                 pixelBuffer[int(round(self.body[i]))][1] + self.color[1]/((i+1)*1.0),
                 pixelBuffer[int(round(self.body[i]))][2] + self.color[2]/((i+1)*1.0)
