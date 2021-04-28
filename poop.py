@@ -318,19 +318,18 @@ def pacmanUpdated():
 
 			if j==num0:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				pixels[num0]=(0,0,0,)
+
 				
 				all_Off()
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num1:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				pixels[num1]=(0,0,0,)
+
 				
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num2:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
-				pixels[num2]=(0,0,0)
-				pixels
+
 				
 				print("PAC-MAN DIED!!!!!!!")
 			if j==num3:	
