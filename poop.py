@@ -6,19 +6,16 @@ import random
 import numpy as np
 import colorsys
 import random
+import colorsys
+import operator
 
 from rpi_ws281x import *
 pixelOutput = neopixel.NeoPixel(board.D18, 209)
 
 
-import colorsys
-import random
-import operator
-import time
-
+# maps
 ForwardEdgeMaps  = [1,8,15,22,29]
 BackwardEdgeMaps = [7,14,21,28,35]
-
 pixelBuffer = [ (0,0,0) ] * 7 * 30
 objectList = []
 
@@ -106,7 +103,7 @@ while True:
     
     for ff in objectList:
         ff.Undraw()
-    2
+    
     for ff in objectList:
         ff.Update()
         
@@ -114,10 +111,10 @@ while True:
         ff.Draw()
         
     # smart draw
-    for buffedPixel in pixelBuffer:
-        if (  buffedPixel != (0,0,0) ):
-            pixelOutput[i] = buffedPixel
+    for i in range(len(pixelBuffer)):
+        if (  pixelBuffer[i] != (0,0,0) ):
+            pixelOutput[i] = pixelBuffer[i]
             
-    time.sleep(0.1)
+    time.sleep(1)
         
         
