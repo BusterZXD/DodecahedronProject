@@ -299,10 +299,10 @@ def pacmanUpdated():
 	num=0
 	coin=0
 	pixels.fill((168,227,255))
-	for i in range(4)
+	for i in range(4):
 		num=random.randint(0,LED_COUNT)
 		pixels[num]=(255,169,247)
-	for j in range(LED_COUNT)	
+	for j in range(LED_COUNT):
 		if i >=1:
 			pixels[i-1]=(0,0,0)
 		elif i==0:
