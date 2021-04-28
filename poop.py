@@ -311,8 +311,8 @@ def pacmanUpdated():
 	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
 	pixels[num3]=(78,218,28)
 	while condition == 1:
+		pixels[0]=(255,255,0)
 		for j in range(LED_COUNT):
-			pixels[j]=(255,255,0)
 			if j>=1:
 				pixels[j-1]=(0,0,0)
 
