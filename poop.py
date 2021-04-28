@@ -310,9 +310,9 @@ def pacmanUpdated():
 			pixels[j]=(0,0,0)
 		elif pixels[i]==(255,255,0):
 			coin=random.randint(0,1)
-			if coin==0:
-				break
-				print("PAC-MAN DIED!!!!!!!")
+		if coin==0:
+			break
+			print("PAC-MAN DIED!!!!!!!")
 	all_Off()
 				
 def flashBangRainbow():
