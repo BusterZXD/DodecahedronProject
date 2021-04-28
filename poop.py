@@ -291,7 +291,7 @@ def blinkRanbow():
 		faceI(155,16,247,delay)
 		faceJ(247,16,194,delay)
 		faceK(247,16,55,delay)
-	all_Off()
+		allOff()
 
 def pacmanUpdated():
 	num0=0
