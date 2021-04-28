@@ -31,10 +31,12 @@ Junction = {
     34: [ 0, 99],
      0: [99, 34]
 }
+ 
+head = 0
 
 class Firefly:
     
-    head = 0
+    
     body = [1.0,1.0,1.0,1.0,1.0]
     color = (128,128,128)
     direction = 0
@@ -147,9 +149,9 @@ while True:
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
             pixelOutput[i] = (
-                min(255, int(round(pixelBuffer[i][0])), 
-                min(255, int(round(pixelBuffer[i][1])), 
-                min(255, int(round(pixelBuffer[i][2]))
+                min(255, int(round(pixelBuffer[i][0]))), 
+                min(255, int(round(pixelBuffer[i][1]))), 
+                min(255, int(round(pixelBuffer[i][2])))
             )
     
     pixelOutput.show()
