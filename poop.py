@@ -296,13 +296,31 @@ def blinkRanbow():
 	all_Off()
 
 def pacmanUpdated():
-	num=0
+	num0=0
+	num1=0
+	num2=0
+	num3=0
 	coin=0
+	ghostholder=0
 	pixels.fill((168,227,255))
-	for i in range(4):
-		num=random.randint(0,LED_COUNT)
-		pixels[num]=(255,0,230)
+	num0=random.randint(15,LED_COUNT)#random ghost1 spawn
+	pixels[num0]=(255,0,230)
+	num1=random.randint(15,LED_COUNT)#random ghost2 spawn
+	pixels[num1]=(218,28,28)
+	num2=random.randint(15,LED_COUNT)#random ghost3 spawn
+	pixels[num2]=(28,148,255)
+	num3=random.randint(15,LED_COUNT)#random ghost4 spawn
+	pixels[num3]=(78,218,28)
 	for j in range(LED_COUNT):
+		if j <= LED_COUNT:
+			pixels[num0-1]=(255,0,230)
+			pixels[num0]=(168,227,255)
+			pixels[num1-1]=(218,28,28)
+			pixels[num1]=(168,227,255)
+			pixels[num2-1]=(28,148,255)
+			pixels[num2]=(168,227,255)
+			pixels[num3-1]=(78,218,28)
+			pixels[num3]=(168,227,255)
 		pixels[j]=(255,255,0)
 		if j>=1:
 			pixels[j-1]=(0,0,0)
