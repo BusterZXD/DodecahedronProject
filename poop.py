@@ -508,8 +508,8 @@ def neon():
 #Main run area to call functions
 running = True;
 while running:
-	print("RESETTING LIGHTS")
-	all_Off()
+	#print("RESETTING LIGHTS")
+	#all_Off()
 	print("Running: updated pac-man")
 	pacmanUpdated()
 	#print("Running: Rainbow")
