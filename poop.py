@@ -327,13 +327,12 @@ def pacmanUpdated():
 			if j==0:
 				pixels[j]=(0,0,0)
 			if j==num0:
-				condition = 0
+				break
 			elif j==num1:
-				condition = 0 
+				break 
 			elif j==num2:
-				condition = 0
-			elif j==num3:
-				condition = 0	
+				break
+			elif j==num3:	
 				break
 				print("PAC-MAN DIED!!!!!!!")
 
