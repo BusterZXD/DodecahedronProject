@@ -313,11 +313,10 @@ def pacmanUpdated():
 	while condition == 1:
 		for j in range(LED_COUNT):
 			
-			pixels[0]=(255,255,0)
+			pixels[j]=(255,255,0)
 			if j>=1:
 				pixels[j-1]=(0,0,0)
-			if j==0:
-				pixels[j]=(0,0,0)
+
 			if j==num0:
 				pixels[random.randint(j,LED_COUNT)]=(255,255,0)
 				pixels[num0]=(0,0,0,)
