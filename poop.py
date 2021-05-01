@@ -15,22 +15,68 @@ pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
 
 
 # maps
-BackwardEdgeMaps  = [0,7,14,21,28]
-ForwardEdgeMaps   = [6,13,20,27,34]
+BackwardEdgeMaps  = [0,7 ,14,21,28,35,42,49,56,63,70,77,84,91, 98,105,112,119,126,133]
+ForwardEdgeMaps   = [6,13,20,27,34,41,48,55,62,69,76,83,90,97,104,111,118,125,132,139]
 pixelBuffer = [ (0,0,0) ] * 7 * 30
 objectList = []
 
 Junction = {
-     6: [7,  99],
-     7: [99,  6],
-    13: [14, 99],
-    14: [99, 13],
-    20: [21, 99],
-    21: [99, 20],
-    27: [28, 99],
-    28: [99, 27],
-    34: [ 0, 99],
-     0: [99, 34]
+     #source, RIGHT, LEFT
+     6: [7,  125],
+     7: [125,  6],
+     125: [6,  7],
+
+    13: [14, 104],
+    14: [104, 13],
+    104: [13, 14],
+
+    20: [21, 83],
+    21: [83, 20],
+    83: [20, 21],
+
+    27: [28, 62],
+    28: [62, 27],
+    62: [27, 28],
+
+    34: [ 0, 35],
+     0: [35, 34],
+    35: [34, 0],
+
+    41: [139, 42],
+    42: [41, 139],
+    139: [42, 41],
+
+    48: [49, 49],
+    49: [48, 48],
+
+    55: [63, 56],
+    56: [55, 63],
+    63: [56, 55],
+
+    69: [70, 70],
+    70: [69, 69],
+
+    76: [84, 77],
+    77: [76, 84],
+    84: [77, 76],
+
+    90: [91, 91],
+    91: [90, 90],
+
+    97: [105, 98],
+    98: [97, 105],
+    105: [98, 97],
+
+    111: [112, 112],
+    112: [111, 111],
+
+    118: [126, 119],
+    119: [118, 126],
+    126: [119, 118],
+
+    132: [133, 133],
+    133: [132, 132]
+
 }
  
 head = 0
@@ -81,7 +127,7 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = min(choices)
+                    thechoice = random.choice(choices)
                     self.moveTrail()
                     self.body[head] += self.speed
                     
@@ -100,7 +146,7 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = min(choices)
+                    thechoice = random.choice(choices)
                     self.moveTrail()
                     self.body[head] -= self.speed
                                 
@@ -133,6 +179,7 @@ while True:
         ff.Undraw()
     
     for ff in objectList:
+        ff.Update()
         ff.Update()
         
     for ff in objectList:
