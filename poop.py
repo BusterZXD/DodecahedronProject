@@ -151,9 +151,9 @@ while True:
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
             pixelOutput[i] = (
-                min(255, int(round(pixelBuffer[i][0]))), 
-                min(255, int(round(pixelBuffer[i][1]))), 
-                min(255, int(round(pixelBuffer[i][2])))
+                min(255, max(0, int(round(pixelBuffer[i][0])))), 
+                min(255, max(0, int(round(pixelBuffer[i][1])))), 
+                min(255, max(0, int(round(pixelBuffer[i][2]))))
             )
     
     pixelOutput.show()
