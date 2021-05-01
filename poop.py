@@ -170,8 +170,11 @@ def Clear():
 Clear()
 for i in range(0, 7):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.48) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.001, 0.48) )
     objectList.append(f1)
+
+# add speed multiplier here
+speedMultiplier = 5
 
 while True:
     
@@ -179,8 +182,8 @@ while True:
         ff.Undraw()
     
     for ff in objectList:
-        ff.Update()
-        ff.Update()
+        for i in range(0,speedMultiplier):
+            ff.Update()
         
     for ff in objectList:
         ff.Draw()
