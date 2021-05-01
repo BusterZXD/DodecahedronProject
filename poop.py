@@ -1,5 +1,5 @@
-#import board
-#import neopixel
+import board
+import neopixel
 import time
 import argparse
 import random
@@ -10,9 +10,8 @@ import colorsys
 import operator
 import math
 
-#from rpi_ws281x import *
-pixelOutput = [ (0,0,0) ] * (7 * 30)
-#neopixel.NeoPixel(board.D18, 209, auto_write=False)
+from rpi_ws281x import *
+pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
 
 
 # maps
@@ -37,7 +36,6 @@ Junction = {
 head = 0
 
 class Firefly:
-    
     
     body = []
     color = (128,128,128)
@@ -65,9 +63,7 @@ class Firefly:
     def moveTrail(self):
         self.body.pop( len(self.body) - 1)
         self.body.insert(0, self.body[0]*1.0)
-        #for i in range(0, self.length-1):
-        #    self.body[self.length-i] = self.body[self.length-(i-1)]
-            
+  
     def Draw(self):
         # update tuples
         for i in range(self.length):
@@ -118,9 +114,6 @@ class Firefly:
                 self.moveTrail()
                 self.body[head] -= self.speed
                 
-                
-        #print("Moved to ", self.body[1])
-    
 
 def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
@@ -148,14 +141,13 @@ while True:
     # smart draw
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
-            print("i = ", i)
             pixelOutput[i] = (
                 min(255, max(0, int(round(pixelBuffer[i][0])))), 
                 min(255, max(0, int(round(pixelBuffer[i][1])))), 
                 min(255, max(0, int(round(pixelBuffer[i][2]))))
             )
     
-    #pixelOutput.show()
-    time.sleep(0.005)
+    pixelOutput.show()
+    time.sleep(0.001)
         
         
