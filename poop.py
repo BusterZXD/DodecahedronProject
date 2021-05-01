@@ -15,67 +15,67 @@ pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
 
 
 # maps
-BackwardEdgeMaps  = [0,7 ,14,21,28,35,42,49,56,63,70,77,84,91, 98,105,112,119,126,133]
+BackwardEdgeMaps  = [0, 7,14,21,28,35,42,49,56,63,70,77,84,91, 98,105,112,119,126,133]
 ForwardEdgeMaps   = [6,13,20,27,34,41,48,55,62,69,76,83,90,97,104,111,118,125,132,139]
 pixelBuffer = [ (0,0,0) ] * 7 * 30
 objectList = []
 
 Junction = {
-     #source, RIGHT, LEFT
-     6: [7,  125],
-     7: [125,  6],
-     125: [6,  7],
+    #source, RIGHT, LEFT, -> direction switch (True / False)
+    6:   [[  7, False],  [125,  True]],
+    7:   [[125, False],  [  6, False]],
+    125: [[  6,  True],  [  7, False]],
 
-    13: [14, 104],
-    14: [104, 13],
-    104: [13, 14],
+    13:  [[ 14, False], [104,  True]],
+    14:  [[104, False], [ 13, False]],
+    104: [[ 13,  True], [ 14, False]],
 
-    20: [21, 83],
-    21: [83, 20],
-    83: [20, 21],
+    20: [[21, False], [83,  True]],
+    21: [[83, False], [20, False]],
+    83: [[20,  True], [21, False]],
 
-    27: [28, 62],
-    28: [62, 27],
-    62: [27, 28],
+    27: [[28, False], [62,  True]],
+    28: [[62, False], [27, False]],
+    62: [[27,  True], [28, False]],
 
-    34: [ 0, 35],
-     0: [35, 34],
-    35: [34, 0],
+    34: [ [0, False], [35, False]],
+     0: [[35,  True], [34, False]],
+    35: [[34, False], [ 0,  True]],
 
-    41: [139, 42],
-    42: [41, 139],
-    139: [42, 41],
+    41:  [[139,  True], [ 42, False]],
+    42:  [[ 41, False], [139, False]],
+    139: [[ 42, False], [ 41,  True]],
 
-    48: [49, 49],
-    49: [48, 48],
+    48: [[49, False], [49, False]],
+    49: [[48, False], [48, False]],
 
-    55: [63, 56],
-    56: [55, 63],
-    63: [56, 55],
+    55: [[63, False], [56, False]],
+    56: [[55, False], [63,  True]],
+    63: [[56,  True], [55, False]],
 
-    69: [70, 70],
-    70: [69, 69],
+    69: [[70, False], [70, False]],
+    70: [[69, False], [69, False]],
 
-    76: [84, 77],
-    77: [76, 84],
-    84: [77, 76],
+    76: [[84, False], [77, False]],
+    77: [[76, False], [84,  True]],
+    84: [[77,  True], [76, False]],
 
-    90: [91, 91],
-    91: [90, 90],
+    90: [[91, False], [91, False]],
+    91: [[90, False], [90, False]],
 
-    97: [105, 98],
-    98: [97, 105],
-    105: [98, 97],
+    97:  [[105, False], [ 98, False]],
+    98:  [[ 97, False], [105,  True]],
+    105: [[ 98,  True], [ 97, False]],
 
-    111: [112, 112],
-    112: [111, 111],
+    111: [[112, False], [112, False]],
+    112: [[111, False], [111, False]],
 
-    118: [126, 119],
-    119: [118, 126],
-    126: [119, 118],
+    118: [[126, False], [119, False]],
+    119: [[118, False], [126,  True]],
+    126: [[119,  True], [118, False]],
 
-    132: [133, 133],
-    133: [132, 132]
+    132: [[133, False], [133, False]],
+    133: [[132, False], [132, False]]
 
 }
  
@@ -128,13 +128,16 @@ class Firefly:
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
                     thechoice = random.choice(choices)
+
                     self.moveTrail()
                     self.body[head] += self.speed
                     
                     # jump to next chain
                     fraction = self.body[head] - math.floor(self.body[head])
                     if fraction >= 0.5:
-                        self.body[head] = thechoice - (1.0 - fraction)
+                        self.body[head] = thechoice[0] - (1.0 - fraction)
+                        if (thechoice[1] == True)
+                            self.Direction = not self.Direction
 
             else:
                 self.moveTrail()
@@ -153,7 +156,9 @@ class Firefly:
                     # jump to next chain
                     fraction = 1.0 - ((self.body[head]-1) % 1)
                     if fraction >= 0.5:
-                        self.body[head] = thechoice + (1.0 - fraction)
+                        self.body[head] = thechoice[0] + (1.0 - fraction)
+                        if (thechoice[1] == True)
+                            self.Direction = not self.Direction
                   
                     
             else:
@@ -168,13 +173,13 @@ def Clear():
 
     
 Clear()
-for i in range(0, 7):
+for i in range(0, 8):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.001, 0.48) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.04, 0.48) )
     objectList.append(f1)
 
 # add speed multiplier here
-speedMultiplier = 5
+speedMultiplier = 4
 
 while True:
     
