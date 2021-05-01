@@ -1,5 +1,5 @@
-import board
-import neopixel
+#import board
+#import neopixel
 import time
 import argparse
 import random
@@ -10,8 +10,9 @@ import colorsys
 import operator
 import math
 
-from rpi_ws281x import *
-pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
+#from rpi_ws281x import *
+pixelOutput = [ (0,0,0) ] * (7 * 30)
+#neopixel.NeoPixel(board.D18, 209, auto_write=False)
 
 
 # maps
@@ -48,7 +49,7 @@ class Firefly:
         if (self.speed == int(self.speed)):
             self.speed += 0.1
             
-        self.length = 1+int(self.speed*30)
+        self.length = 2 + int(self.speed*30)
         self.body = [index*1.0] * self.length
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
@@ -89,14 +90,10 @@ class Firefly:
                     self.body[head] += self.speed
                     
                     # jump to next chain
-                    fraction = self.body[head] - floor(self.body[head])
+                    fraction = self.body[head] - math.floor(self.body[head])
                     if fraction >= 0.5:
                         self.body[head] = thechoice - (1.0 - fraction)
-                  
-                    
-                  
-                  #2
-                    #print("Firefly A moved to", self.body[1])
+
             else:
                 self.moveTrail()
                 self.body[head] += self.speed
@@ -132,9 +129,9 @@ def Clear():
 
     
 Clear()
-for i in range(0, 3):
+for i in range(0, 7):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.8) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.025, 0.48) )
     objectList.append(f1)
 
 while True:
@@ -151,13 +148,14 @@ while True:
     # smart draw
     for i in range(len(pixelBuffer)):
         if (  pixelBuffer[i] != (0,0,0) ):
+            print("i = ", i)
             pixelOutput[i] = (
                 min(255, max(0, int(round(pixelBuffer[i][0])))), 
                 min(255, max(0, int(round(pixelBuffer[i][1])))), 
                 min(255, max(0, int(round(pixelBuffer[i][2]))))
             )
     
-    pixelOutput.show()
+    #pixelOutput.show()
     time.sleep(0.005)
         
         
