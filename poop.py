@@ -136,7 +136,7 @@ class Firefly:
                     fraction = self.body[head] - math.floor(self.body[head])
                     if fraction >= 0.5:
                         self.body[head] = thechoice[0] - (1.0 - fraction)
-                        if (thechoice[1] == True)
+                        if (thechoice[1] == True):
                             self.Direction = not self.Direction
 
             else:
@@ -157,7 +157,7 @@ class Firefly:
                     fraction = 1.0 - ((self.body[head]-1) % 1)
                     if fraction >= 0.5:
                         self.body[head] = thechoice[0] + (1.0 - fraction)
-                        if (thechoice[1] == True)
+                        if (thechoice[1] == True):
                             self.Direction = not self.Direction
                   
                     
