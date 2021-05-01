@@ -8,6 +8,7 @@ import colorsys
 import random
 import colorsys
 import operator
+import math
 
 from rpi_ws281x import *
 pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
@@ -43,7 +44,7 @@ class Firefly:
     speed = 1
     
     def __init__(self, index, speed):
-        self.speed = speed;
+        self.speed = speed
         if (self.speed == int(self.speed)):
             self.speed += 0.1
             
@@ -88,7 +89,7 @@ class Firefly:
                     self.body[head] += self.speed
                     
                     # jump to next chain
-                    fraction = (self.body[head] % 1)
+                    fraction = self.body[head] - floor(self.body[head])
                     if fraction >= 0.5:
                         self.body[head] = thechoice - (1.0 - fraction)
                   
