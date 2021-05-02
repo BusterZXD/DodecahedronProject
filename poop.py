@@ -23,19 +23,19 @@ objectList = []
 Junction = {
     #source, RIGHT, LEFT, -> direction switch (True / False)
 
-    6:   [[  7, False],  [125,  True]],
-    7:   [[125, False],  [  6, False]],
-    125: [[  6,  True],  [  7, False]],
+    6:   [[7, False],  [125, True]],
+    7:   [[125, False],  [6, False]],
+    125: [[6, True],  [7, False]],
 
-    13:  [[ 14, False], [104,  True]],
+    13:  [[ 14, False], [104, True]],
     14:  [[104, False], [ 13, False]],
     104: [[ 13,  True], [ 14, False]],
 
-    20: [[21, False], [83,  True]],
+    20: [[21, False], [83, True]],
     21: [[83, False], [20, False]],
     83: [[20,  True], [21, False]],
 
-    27: [[28, False], [62,  True]],
+    27: [[28, False], [62, True]],
     28: [[62, False], [27, False]],
     62: [[27,  True], [28, False]],
 
@@ -45,7 +45,7 @@ Junction = {
 
     41:  [[139, True], [42, False]],
     42:  [[41, False], [139, False]],
-    139: [[42, False], [41, True]],
+   
 
     48: [[160, True], [49, False]],
     49: [[48, False], [160, False]],
