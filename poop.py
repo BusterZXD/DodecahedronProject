@@ -155,7 +155,8 @@ class Firefly:
         if self.direction == 1:
             if int(round(self.body[head])) in ForwardEdgeMaps:
                 if int(round(self.body[head])) in Junction.keys():
-                    #left/right choices
+                    
+					#left/right choices
                     choices = Junction[int(round(self.body[head]))]
                     thechoice = random.choice(choices)
 
@@ -209,7 +210,7 @@ for i in range(0, 7):
     objectList.append(f1)
 
 # add speed multiplier here
-speedMultiplier = 10
+speedMultiplier = 1
 
 while True:
     
