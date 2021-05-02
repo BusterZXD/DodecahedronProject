@@ -46,7 +46,7 @@ Junction = {
     41:  [[139, True], [42, False]],
     42:  [[41, False], [139, False]],
     139: [[42, False], [41, True]],
-	140: [[42, True], [41, False]], [139, False]],
+	140: [[42, True], [41, False], [139, False]],
 
     48: [[160, True], [49, False]],
     49: [[48, False], [160, False]],
