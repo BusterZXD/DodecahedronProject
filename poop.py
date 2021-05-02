@@ -79,9 +79,9 @@ Junction = {
     119: [[118, False], [126,  True]],
     126: [[119, True], [118, False]],
 
-    132: [[133, False], [133, False]],
-    133: [[132, False], [132, False]],
-	140: [[132, False], [132, False]],
+    132: [[140, False], [133, False]],
+    133: [[132, False], [140, True]],
+	140: [[133, True], [132, False]],
 
     146: [[147, False], [209, True]],
     147: [[209, False], [146, False]],
