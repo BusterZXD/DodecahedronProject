@@ -46,7 +46,6 @@ Junction = {
     41:  [[139, True], [42, False]],
     42:  [[41, False], [139, False]],
     139: [[42, False], [41, True]],
-	140: [[42, True], [41, False], [139, False]],
 
     48: [[160, True], [49, False]],
     49: [[48, False], [160, False]],
@@ -78,11 +77,35 @@ Junction = {
 
     118: [[126, False], [119, False]],
     119: [[118, False], [126,  True]],
-    126: [[119,  True], [118, False]],
+    126: [[119, True], [118, False]],
 
     132: [[133, False], [133, False]],
     133: [[132, False], [132, False]],
+	140: [[132, False], [132, False]],
 
+    146: [[147, False], [209, True]],
+    147: [[209, False], [146, False]],
+	209: [[146, False], [147, False]],
+
+    153: [[154, False], [161, False]],
+    154: [[161, True], [153, False]],
+	161: [[153, False], [154, True]],
+
+    167: [[168, False], [175, False]],
+    168: [[175, True], [167, False]],
+	175: [[167, False], [168, True]],
+
+	181: [[189, False], [182, False]],
+    182: [[189, True], [181, False]],
+	189: [[181, False], [182, True]],
+
+	195: [[196, False], [203, False]],
+    196: [[203, True], [195, False]],
+	203: [[195, False], [196, True]],
+
+	209: [[146, True], [147, False]],
+    147: [[209, False], [146, False]],
+	146: [[147, False], [209, True]]
 
 }
  
@@ -186,7 +209,7 @@ for i in range(0, 8):
     objectList.append(f1)
 
 # add speed multiplier here
-speedMultiplier = 4
+speedMultiplier = 10
 
 while True:
     
