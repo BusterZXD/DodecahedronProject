@@ -22,6 +22,7 @@ objectList = []
 
 Junction = {
     #source, RIGHT, LEFT, -> direction switch (True / False)
+
     6:   [[  7, False],  [125,  True]],
     7:   [[125, False],  [  6, False]],
     125: [[  6,  True],  [  7, False]],
@@ -42,40 +43,46 @@ Junction = {
      0: [[35,  True], [34, False]],
     35: [[34, False], [ 0,  True]],
 
-    41:  [[139,  True], [ 42, False]],
-    42:  [[ 41, False], [139, False]],
-    139: [[ 42, False], [ 41,  True]],
+    41:  [[139, True], [42, False]],
+    42:  [[41, False], [139, False]],
+    139: [[42, False], [41, True]],
+	140: [[42, True], [41, False]], [139, False]],
 
-    48: [[49, False], [49, False]],
-    49: [[48, False], [48, False]],
+    48: [[160, True], [49, False]],
+    49: [[48, False], [160, False]],
+   160: [[49, False], [48, True]],
 
     55: [[63, False], [56, False]],
     56: [[55, False], [63,  True]],
     63: [[56,  True], [55, False]],
 
-    69: [[70, False], [70, False]],
-    70: [[69, False], [69, False]],
+    69: [[174, True], [70, False]],
+    70: [[69, False], [174, False]],
+    174: [[70, False], [69, True]],
 
     76: [[84, False], [77, False]],
     77: [[76, False], [84,  True]],
     84: [[77,  True], [76, False]],
 
-    90: [[91, False], [91, False]],
-    91: [[90, False], [90, False]],
+    90: [[188, True], [91, False]],
+    91: [[90, False], [188, False]],
+   188: [[91, False], [90, True]],
 
     97:  [[105, False], [ 98, False]],
     98:  [[ 97, False], [105,  True]],
     105: [[ 98,  True], [ 97, False]],
 
-    111: [[112, False], [112, False]],
-    112: [[111, False], [111, False]],
+    111: [[202, True], [112, False]],
+    112: [[111, False], [112, False]],
+	202: [[112, False], [111, True]],
 
     118: [[126, False], [119, False]],
     119: [[118, False], [126,  True]],
     126: [[119,  True], [118, False]],
 
     132: [[133, False], [133, False]],
-    133: [[132, False], [132, False]]
+    133: [[132, False], [132, False]],
+
 
 }
  
