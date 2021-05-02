@@ -234,5 +234,3 @@ while True:
     
     pixelOutput.show()
     time.sleep(0.001)
-        
-        
