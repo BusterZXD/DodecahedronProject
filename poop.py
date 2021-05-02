@@ -95,9 +95,9 @@ Junction = {
     168: [[175, True], [167, False]],
 	175: [[167, False], [168, True]],
 
-	181: [[189, False], [182, False]],
-    182: [[189, True], [181, False]],
-	189: [[181, False], [182, True]],
+	181: [[188, False], [182, False]],
+    182: [[188, True], [181, False]],
+	188: [[181, False], [182, True]],
 
 	195: [[196, False], [203, False]],
     196: [[203, True], [195, False]],
@@ -206,11 +206,11 @@ def Clear():
 Clear()
 for i in range(0, 7):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.04, 0.48) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.4, 0.48) )
     objectList.append(f1)
 
 # add speed multiplier here
-speedMultiplier = 1
+speedMultiplier = 4
 
 while True:
     
