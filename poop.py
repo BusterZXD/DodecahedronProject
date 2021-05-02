@@ -203,7 +203,7 @@ def Clear():
 
     
 Clear()
-for i in range(0, 8):
+for i in range(0, 7):
 
     f1 = Firefly((3 + 7*i)%35, random.uniform(0.04, 0.48) )
     objectList.append(f1)
