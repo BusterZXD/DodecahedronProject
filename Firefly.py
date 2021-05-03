@@ -124,7 +124,8 @@ class Firefly:
             self.speed += 0.1
             
         self.length = 2 + int(self.speed*30)
-        self.body = [index*1.0] * self.length
+        self.body = [index*1.0] * self.length				
+																	    #Colour Range, Saturation, Luminosity 
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
         self.direction = random.randint(0,1)
         
