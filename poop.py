@@ -158,7 +158,7 @@ class Firefly:
                     
 					#left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = random.choice(choices)
+                    thechoice = choices[0]
 
                     self.moveTrail()
                     self.body[head] += self.speed
@@ -180,7 +180,7 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = random.choice(choices)
+                    thechoice = choices[1]
                     self.moveTrail()
                     self.body[head] -= self.speed
                                 
