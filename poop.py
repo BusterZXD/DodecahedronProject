@@ -134,7 +134,7 @@ class Firefly:
         self.length = 2 + int(self.speed*30)
         self.body = [index*1.0] * self.length
         self.colortime = random.uniform(0,1)
-        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(colortime, 1, 0.5))
+        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(self.colortime, 1, 0.5))
         self.direction = random.randint(0,1)
         
     def Suicide(self):
@@ -160,8 +160,8 @@ class Firefly:
     
     def Update(self):
         
-        colortime += 0.01
-        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(colortime, 1, 0.5))
+        self.colortime += 0.01
+        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(self.colortime, 1, 0.5))
 
         #  check if we need to turn
         if self.direction == 1:
