@@ -11,7 +11,7 @@ import operator
 import math
 
 from rpi_ws281x import *
-pixelOutput = neopixel.NeoPixel(board.D18, 209, auto_write=False)
+pixelOutput = neopixel.NeoPixel(board.D18, 210, auto_write=False)
 
 
 # maps
@@ -95,13 +95,13 @@ Junction = {
     168: [[175, True], [167, False]],
 	175: [[167, False], [168, True]],
 
-	181: [[188, False], [182, False]],
-    182: [[188, True], [181, False]],
-	188: [[181, False], [182, True]],
+	181: [[189, False], [182, False]],
+    182: [[189, True], [181, False]],
+	189: [[181, False], [182, True]],
 
-	195: [[196, False], [202, False]],
-    196: [[202, True], [195, False]],
-	202: [[195, False], [196, True]],
+	195: [[196, False], [203, False]],
+    196: [[203, True], [195, False]],
+	203: [[195, False], [196, True]],
 
 	209: [[146, True], [147, False]],
     147: [[209, False], [146, False]],
