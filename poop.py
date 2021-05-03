@@ -201,12 +201,12 @@ def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
         
 
+faces = [3, 38, 66, 87, 108, 129, 143, 164, 178, 192, 206]
 
-    
 Clear()
-for i in range(0, 7):
+for i in range(len(faces)):
 
-    f1 = Firefly((3 + 7*i)%35, random.uniform(0.4, 0.48) )
+    f1 = Firefly(faces[i], random.uniform(0.4, 0.48) )
     objectList.append(f1)
 
 # add speed multiplier here
