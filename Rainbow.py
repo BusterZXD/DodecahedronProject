@@ -160,7 +160,7 @@ class Firefly:
     
     def Update(self):
         
-        self.colortime += 0.01
+        self.colortime += 0.005
         self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(self.colortime, 1, 0.5))
 
         #  check if we need to turn
