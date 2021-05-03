@@ -158,7 +158,8 @@ class Firefly:
                     
 					#left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = choices[0]
+                    thechoice = random.choice(choices)
+
 
                     self.moveTrail()
                     self.body[head] += self.speed
@@ -180,7 +181,7 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = choices[1]
+                    thechoice = random.choice(choices)
                     self.moveTrail()
                     self.body[head] -= self.speed
                                 
@@ -201,12 +202,12 @@ def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
         
 
-faces = [3, 38, 66, 87, 108, 129, 143, 164, 178, 192, 206]
+
 
 Clear()
-for i in range(len(faces)):
+for i in range(0, 8):
 
-    f1 = Firefly(faces[i], random.uniform(0.4, 0.48) )
+    f1 = Firefly((3 + 7*i)%35, random.uniform(0.04, 0.48) )
     objectList.append(f1)
 
 # add speed multiplier here
