@@ -106,8 +106,15 @@ Junction = {
 	209: [[146, True], [147, False]],
     147: [[209, False], [146, False]],
 	146: [[147, False], [209, True]]
-
 }
+
+
+#FaceChoice = {
+#    0: []
+#}
+
+
+
  
 head = 0
 
@@ -117,6 +124,7 @@ class Firefly:
     color = (128,128,128)
     direction = 0
     speed = 1
+    colortime = 0
     
     def __init__(self, index, speed):
         self.speed = speed
@@ -125,7 +133,8 @@ class Firefly:
             
         self.length = 2 + int(self.speed*30)
         self.body = [index*1.0] * self.length
-        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(random.uniform(0,1), 1, 0.5))
+        self.colortime = random.uniform(0,1)
+        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(colortime, 1, 0.5))
         self.direction = random.randint(0,1)
         
     def Suicide(self):
@@ -151,6 +160,9 @@ class Firefly:
     
     def Update(self):
         
+        colortime += 0.01
+        self.color = tuple(round(i * 255) for i in colorsys.hsv_to_rgb(colortime, 1, 0.5))
+
         #  check if we need to turn
         if self.direction == 1:
             if int(round(self.body[head])) in ForwardEdgeMaps:
@@ -158,7 +170,7 @@ class Firefly:
                     
 					#left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = choices[0]
+                    thechoice = random.choice(choices)
 
                     self.moveTrail()
                     self.body[head] += self.speed
@@ -180,7 +192,7 @@ class Firefly:
                 if int(round(self.body[head])) in Junction.keys():
                     #left/right choices
                     choices = Junction[int(round(self.body[head]))]
-                    thechoice = choices[1]
+                    thechoice = random.choice(choices)
                     self.moveTrail()
                     self.body[head] -= self.speed
                                 
@@ -201,12 +213,12 @@ def Clear():
     pixelBuffer = [ (0,0,0) ] * 7 * 30
         
 
-faces = [3, 38, 66, 87, 108, 129, 143, 164, 178, 192, 206]
+#faces = [3, 38, 66, 87, 108, 129, 143, 164, 178, 192, 206]
 
 Clear()
-for i in range(len(faces)):
+for i in range(0,5):
 
-    f1 = Firefly(faces[i], random.uniform(0.4, 0.48) )
+    f1 = Firefly( (3+7*i)%35, random.uniform(0.3, 0.48) )
     objectList.append(f1)
 
 # add speed multiplier here
